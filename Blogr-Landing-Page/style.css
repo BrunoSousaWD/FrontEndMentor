@@ -52,8 +52,9 @@ body {
     font-size: 1rem;
     font-family: 'Overpass', sans-serif;
     line-height: 1;
-    max-width: 1444px;
-    margin-inline: auto;
+
+    max-width: 1440px;
+    margin-inline: 0 auto;
     overflow-x: hidden;
 }
 
@@ -96,6 +97,7 @@ header {
 }
 
 .container {
+    display: block;
     width: 80%;
     max-width: 80%;
     margin: 0 auto;
@@ -264,9 +266,9 @@ header {
     z-index: -1;
 
     background-image: url('images/bg-pattern-intro-desktop.svg');
-    background-size: 248%;
+    background-size: 210%;
     background-repeat: no-repeat;
-    background-position: 27% 52%;
+    background-position: 25% 52%;
 
     padding: 269px 0;
     opacity: .4;
@@ -317,7 +319,7 @@ main {
     position: relative;
     padding-top: 2.5rem;
     max-width: 1440px;
-    overflow-x: hidden;
+
 }
 
 .section-title {
@@ -366,6 +368,69 @@ main {
     z-index: 999;
 }
 
+
+
+/** Banner **/
+
+.banner {
+    position: relative;
+    padding: 110px 0 290px 0;
+    background: linear-gradient(0.45turn, hsl(237, 17%, 21%), hsl(237, 23%, 32%)85%);
+    border-bottom-left-radius: 5rem;
+    border-top-right-radius: 5rem;
+
+    margin-top: 45px;
+    margin-bottom: 4rem;
+}
+
+.banner::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+
+    background-image: url('images/bg-pattern-circles.svg');
+    background-size: 68%;
+    background-repeat: no-repeat;
+    background-position: -205px 80%;
+}
+
+.banner-left {
+    position: absolute;
+    inset: 0;
+    top: -89px;
+    left: 30px;
+    width: 50%;
+    background-image: url(images/illustration-phones.svg);
+    background-repeat: no-repeat;
+    background-size: 76%;
+    background-position: center;
+    padding-top: 420px;
+    padding-bottom: 200px;
+    z-index: 2;
+}
+
+.banner-right {
+    width: 50%;
+    color: rgba(255, 255, 255, 0.905);
+    float: right;
+}
+
+.banner-right h4 {
+    position: relative;
+    z-index: 4;
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    color: rgba(255, 255, 255, 0.905);
+}
+
+.banner-right p {
+    color: rgba(255, 255, 255, 0.665);
+    line-height: 1.8;
+    font-size: .90rem;
+    font-weight: 400;
+    padding-right: 45px;
+}
 
 @media(max-width:375px) {}
 
