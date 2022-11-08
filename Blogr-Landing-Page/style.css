@@ -53,6 +53,7 @@ body {
     font-family: 'Overpass', sans-serif;
     line-height: 1;
 
+    width: 100%;
     max-width: 1440px;
     margin-inline: 0 auto;
     overflow-x: hidden;
@@ -90,16 +91,16 @@ p {
 
 
 header {
-    position: relative;
+
     margin-bottom: 0;
     overflow: hidden;
     max-height: 590px;
+    max-width: 100%;
 }
 
 .container {
     display: block;
-    width: 80%;
-    max-width: 80%;
+    max-width: 90%;
     margin: 0 auto;
 }
 
@@ -250,7 +251,7 @@ header {
     position: relative;
     overflow: hidden;
     top: -90px;
-    width: 100%;
+    max-width: 1440px;
     isolation: isolate;
     background: linear-gradient(0.35turn, hsl(13, 100%, 72%)50%, hsl(353, 100%, 62%));
     padding: 220px 0 160px 0;
@@ -318,7 +319,7 @@ header {
 main {
     position: relative;
     padding-top: 2.5rem;
-    max-width: 1440px;
+    max-width: 100%;
 
 }
 
@@ -339,13 +340,15 @@ main {
     max-width: 50%;
 }
 
-.left h4 {
+.left h4,
+.tools-right h4 {
     font-size: 1.44rem;
     margin-bottom: 1.55rem;
     color: hsl(208, 49%, 24%);
 }
 
-.left p {
+.left p,
+.tools-right p {
     font-size: .8rem;
     margin-bottom: 3.5rem;
     color: hsl(207deg 13% 34% / 78%);
@@ -430,6 +433,54 @@ main {
     font-size: .90rem;
     font-weight: 400;
     padding-right: 45px;
+}
+
+
+/** Tools **/
+.tools {
+    position: relative;
+
+    padding-top: 240px;
+    padding-bottom: 525px;
+
+    margin-bottom: 8rem;
+}
+
+.tools-left {
+    width: 61%;
+    position: absolute;
+    top: 55px;
+    left: -249px;
+
+    background-image: url('images/illustration-laptop-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+    padding-top: 355px;
+    padding-bottom: 455px;
+
+}
+
+.tools-right {
+    position: relative;
+    width: 50%;
+    float: right;
+
+}
+
+.tools-right p {
+    padding-right: 90px;
+}
+
+
+
+/** Footer **/
+footer {
+    background: hsl(240, 10%, 16%);
+    color: hsl(240, 2%, 79%);
+
+    padding-block: 150px;
+    border-top-right-radius: ;
 }
 
 @media(max-width:375px) {}
