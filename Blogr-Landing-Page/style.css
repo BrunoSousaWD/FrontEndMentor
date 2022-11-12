@@ -93,8 +93,8 @@ p {
 header {
     margin-bottom: 0;
     overflow: hidden;
-    max-height: 590px;
     max-width: 100%;
+
 }
 
 .container {
@@ -112,6 +112,20 @@ header {
     position: relative;
     z-index: 99;
     padding-inline: 90px;
+}
+
+.navbar>.hamb {
+    display: none;
+    max-width: 40px;
+    width: 27px;
+    height: 27px;
+    background-image: url(images/icon-hamburger.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+
+
 }
 
 .nav-items {
@@ -152,17 +166,13 @@ header {
     font-weight: 600;
 }
 
-#nav-item:hover,
-#nav-item-company:hover,
-#nav-item-connect:hover {
+.dropbtn:hover {
     text-decoration: underline;
     text-shadow: 0 0 1px white;
 }
 
 
-.drop-content,
-.drop-content-company,
-.drop-content-connect {
+.drop-content {
     display: none;
     position: absolute;
     top: 40px;
@@ -174,21 +184,19 @@ header {
     font-weight: 400;
 }
 
-.drop-content {
-    left: 238px;
+#drop-content {
+    left: 234px;
 }
 
-.drop-content-company {
-    left: 331px;
+#drop-content-company {
+    left: 327px;
 }
 
-.drop-content-connect {
+#drop-content-connect {
     left: 426px;
 }
 
-.drop-content a,
-.drop-content-company a,
-.drop-content-connect a {
+.drop-content a {
     float: none;
     color: black;
     padding: 12px 16px;
@@ -197,9 +205,7 @@ header {
     text-align: left;
 }
 
-.drop-content a:hover,
-.drop-content-company a:hover,
-.drop-content-connect a:hover {
+.drop-content a:hover {
     font-weight: 600;
 }
 
@@ -218,9 +224,7 @@ header {
     top: -4px;
 }
 
-.active {
-    display: block;
-}
+
 
 .log {
     font-weight: 400;
@@ -350,7 +354,7 @@ header {
 .main-content {
     position: relative;
     inset: 0;
-    padding-bottom: 150px;
+    padding-bottom: 105px;
 }
 
 .left {
@@ -368,7 +372,7 @@ header {
 
 .left p,
 .tools-right p {
-    font-size: .8rem;
+    font-size: .95rem;
     margin-bottom: 3.5rem;
     color: hsl(207deg 13% 34% / 78%);
     font-weight: 500;
@@ -378,15 +382,15 @@ header {
 }
 
 .right {
-    width: 50%;
+    width: 60%;
     position: absolute;
-    top: 00px;
+    top: 0;
     right: -240px;
     background-image: url('images/illustration-editor-desktop.svg');
     background-repeat: no-repeat;
-    background-size: 98%;
+    background-size: 100%;
 
-    padding: 400px;
+    padding: 412px;
     z-index: 999;
 }
 
@@ -450,9 +454,9 @@ header {
 .banner-right p {
     color: rgba(255, 255, 255, 0.665);
     line-height: 1.8;
-    font-size: 1rem;
+    font-size: .975rem;
     font-weight: 400;
-    padding-right: 45px;
+    padding-right: 65px;
 }
 
 
@@ -461,23 +465,23 @@ header {
     position: relative;
     overflow: hidden;
     padding-top: 240px;
-    padding-bottom: 115px;
+    padding-bottom: 230px;
 
 
 }
 
 .tools-left {
-    width: 61%;
+    width: 65%;
     position: absolute;
     top: 55px;
-    left: -249px;
+    left: -265px;
 
     background-image: url('images/illustration-laptop-desktop.svg');
     background-repeat: no-repeat;
     background-size: 100%;
 
     padding-top: 355px;
-    padding-bottom: 355px;
+    padding-bottom: 405px;
 
 }
 
@@ -489,7 +493,7 @@ header {
 }
 
 .tools-right p {
-    padding-right: 100px;
+    padding-right: 90px;
 }
 
 
@@ -532,9 +536,180 @@ footer {
     text-decoration: underline;
 }
 
-@media(max-width:375px) {}
+@media(max-width:375px) {
+    body {
+        display: block;
+    }
+
+    header {
+        overflow: visible;
+    }
+
+    main {
+        position: relative;
+        z-index: 1;
+    }
+
+    .navbar>.hamb {
+        display: block;
+    }
+
+    .container {
+        max-width: 85%;
+    }
+
+    .navbar {
+        position: relative;
+        justify-content: space-between;
+        width: 100%;
+
+        margin-top: 40px;
+        padding-inline: 0;
 
 
+    }
+
+
+
+    .nav-items {
+        display: none;
+        position: absolute;
+
+        top: 75px;
+        text-align: center;
+        color: hsl(208, 49%, 24%);
+
+        margin-left: 0;
+        padding-left: 0;
+        background: white;
+        box-shadow: 0px 8px 36px 0px rgba(0, 0, 0, 0.2);
+
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+    #nav-item:hover,
+    #nav-item-company:hover,
+    #nav-item-connect:hover {
+        text-decoration: none;
+    }
+
+
+
+    .nav li {
+        display: block;
+        margin-bottom: 2rem;
+        font-weight: 800;
+        font-size: 1rem;
+    }
+
+
+
+    .drop-content,
+    .drop-content-company,
+    .drop-content-connect {
+        position: inherit;
+        max-width: 90%;
+        margin: auto;
+        background: hsla(240, 3%, 79%, 0.494);
+        box-shadow: none;
+        padding-block: 15px;
+        margin-top: -20px;
+        margin-bottom: 20px;
+        font-size: .9rem;
+        font-weight: 600;
+        opacity: .7;
+    }
+
+
+
+    .drop-arrow,
+    .drop-arrow-company,
+    .drop-arrow-connect {
+        width: 10px;
+        height: 10px;
+
+        display: inline-block;
+        position: relative;
+        top: 1px;
+
+        background: url('images/icon-arrow-dark.svg');
+        background-repeat: no-repeat;
+
+
+    }
+
+    .up-arrow {
+        transform: rotate(180deg);
+        position: relative;
+        top: -1px;
+    }
+
+    .drop-content a,
+    .drop-content-company a,
+    .drop-content-connect a {
+        text-align: center;
+    }
+
+
+    .nav-items ul {
+        display: block;
+        max-width: 100%;
+
+        border-top: 1px solid hsla(240, 3%, 79%, 0.594);
+        padding-block: 40px;
+        margin-inline: 0 auto;
+
+    }
+
+    .log .login {
+        margin-bottom: 40px;
+    }
+
+    .nav-items .log li a {
+
+        color: lime;
+    }
+
+    .overlay {
+        top: -100px;
+    }
+
+    .overlay::after {
+        background-image: url(images/bg-pattern-intro-mobile.svg);
+        background-size: 360%;
+        background-position: 35% 32%;
+
+        opacity: .7;
+
+    }
+
+    .overlay h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+        font-weight: 400;
+    }
+
+    .overlay p {
+        font-weight: 100;
+        margin-bottom: 3rem;
+    }
+}
+
+/** media end*/
+
+/** utility js classes **/
+.active {
+    display: block;
+}
+
+.light-font {
+    opacity: .9;
+}
+
+.inactive {
+    display: none;
+}
 
 /* ATRIBUTION*/
 .attribution {
