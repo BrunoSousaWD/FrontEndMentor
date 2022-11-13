@@ -1,41 +1,6 @@
-// var drop = document.querySelector("#nav-item");
-// var dropMenu = document.querySelector(".drop-content");
-// var arrow = document.querySelector(".drop-arrow");
-
-// var dropCompany = document.querySelector("#nav-item-company");
-// var dropMenuCompany = document.querySelector(".drop-content-company");
-// var arrowCompany = document.querySelector(".drop-arrow-company");
-
-// var dropConnect = document.querySelector("#nav-item-connect");
-// var dropMenuConnect = document.querySelector(".drop-content-connect");
-// var arrowConnect = document.querySelector(".drop-arrow-connect");
-
-
-
-// drop.addEventListener("click", () => {
-//     drop.classList.toggle('light-font');
-//     dropMenu.classList.toggle('active');
-//     arrow.classList.toggle('up-arrow');
-
-// });
-
-// dropCompany.addEventListener("click", () => {
-
-//     dropCompany.classList.toggle('light-font');
-//     dropMenuCompany.classList.toggle('active');
-//     arrowCompany.classList.toggle('up-arrow');
-// });
-
-// dropConnect.addEventListener("click", () => {
-//     dropConnect.classList.toggle('light-font');
-//     dropMenuConnect.classList.toggle('active');
-//     arrowConnect.classList.toggle('up-arrow');
-// });
-
 document.querySelectorAll('.dropbtn').forEach(dropDownFunc);
 
 //dropdown open and close
-
 function dropDownFunc(dropDown) {
 
     if (dropDown.classList.contains('click-menu') === true) {
@@ -108,6 +73,8 @@ var isImg1 = true;
 var isImg2 = false
 hamburger.addEventListener('click', () => {
     navList.classList.toggle('active');
+
+
     if (isImg1 == true) {
         hamburger.style.backgroundImage = "url(images/icon-close.svg)";
         isImg1 = false;
@@ -120,12 +87,3 @@ hamburger.addEventListener('click', () => {
 })
 
 
-
-// var drop = document.querySelectorAll('.dropbtn');
-// var dropMenu = document.querySelector('.drop-content');
-
-// drop.forEach(item => {
-//     item.addEventListener('click', e => {
-//         dropMenu.classList.toggle('active')
-//     });
-// })
