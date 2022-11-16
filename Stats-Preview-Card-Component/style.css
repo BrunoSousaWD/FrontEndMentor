@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+
+:root {
+    --main-background-color: hsl(233, 47%, 7%);
+    --card-bg-color: hsl(244, 38%, 16%);
+    --soft-violet: hsl(277, 64%, 61%);
+
+    /** Neutral **/
+
+    --white: hsl(0, 0%, 100%);
+    --main-p-color: hsla(0, 0%, 100%, 0.75);
+    --stat-hd: hsla(0, 0%, 100%, 0.6);
+
+    --ff-inter: 'Inter', sans-serif;
+    --ff-deca: 'Lexend Deca', sans-serif;
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+
+
+body {
+    min-height: 100vh;
+    background-color: var(--main-background-color);
+    font-size: 15px;
+    font-family: var(--ff-inter), var(--ff-deca);
+    color: var(--white);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.card {
+    display: flex;
+    border-radius: .4rem;
+    overflow: hidden;
+    background-color: var(--card-bg-color);
+
+}
+
+.main {
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 70px;
+}
+
+.main h1 {
+    font-size: 2rem;
+    margin-bottom: 2.2rem;
+
+}
+
+span {
+    color: var(--soft-violet);
+}
+
+.main-p {
+
+    padding-right: 70px;
+    line-height: 1.7;
+    color: var(--main-p-color);
+    margin-bottom: 4rem;
+}
+
+.main>.values {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 80px;
+
+}
+
+.values>.values-item {
+    padding-bottom: 0;
+}
+
+.values-item h2 {
+    font-size: 1.3rem;
+}
+
+.values-item p {
+    margin-top: 7px;
+
+    text-transform: uppercase;
+    color: var(--main-p-color);
+    font-family: var(--stat-hd);
+}
+
+.img {
+    width: 100%;
+
+    background-image: url('images/image-header-desktop.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+
+}
+
+.img:after {
+    content: '';
+    width: 100%;
+    background-color: var(--soft-violet);
+
+    mix-blend-mode: multiply;
+    inset: 0;
+    position: absolute;
+}
