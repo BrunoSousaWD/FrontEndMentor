@@ -26,22 +26,31 @@ img {
     width: 100%;
 }
 
-
+html {
+    width: 100%;
+    height: 100%;
+}
 
 body {
-    height: 100vh;
     background-color: var(--main-background-color);
     font-size: 15px;
     font-family: var(--ff-inter), var(--ff-deca);
     color: var(--white);
+    overflow: scroll;
 }
 
 .container {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 100vh;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
 }
 
 .card {
@@ -53,7 +62,7 @@ body {
 }
 
 .main {
-    max-width: 50%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     padding: 70px;
@@ -102,50 +111,69 @@ span {
 
 .img {
     width: 100%;
-
+    max-width: 50%;
+    background-color: hsl(277, 64%, 61%);
     background-image: url('images/image-header-desktop.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    position: relative;
+    background-blend-mode: multiply;
+
 }
 
-.img:after {
-    content: '';
-    width: 100%;
-    background-color: var(--soft-violet);
+.attribution {}
 
-    mix-blend-mode: multiply;
-    inset: 0;
-    position: absolute;
-}
 
 @media (max-width:375px) {
     .container {
-        max-width: 80%;
-        margin-top: 100px;
+        max-width: 85%;
+        margin-block: 10px;
         margin-inline: auto;
+        max-height: 100vh;
     }
 
     .card {
-        flex-direction: column;
-        overflow: visible;
+        flex-direction: column-reverse;
+
+
     }
 
     .main {
-        width: 100%;
-        padding: 0;
+        width: 85%;
+        padding: 30px;
+        text-align: center;
+        flex: 1;
+    }
+
+    .main h1 {
+        font-size: 1.5rem;
     }
 
     .main-p {
         padding: 0;
+        margin-bottom: 10px;
     }
 
     .img {
+
+        max-width: 100%;
         background-image: url('images/image-header-mobile.jpg');
+        background-position: center;
+        background-size: cover;
+        padding-block: 125px;
     }
 
+    .main .values {
+        flex-direction: column;
+        padding-right: 0px;
+    }
 
+    .values-item,
+    h2 {
+        padding-top: 15px;
+    }
 
-
+    .values-item p {
+        font-size: .7rem;
+    }
 }
