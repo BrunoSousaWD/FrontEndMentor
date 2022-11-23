@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+    --body-bg: hsl(185, 41%, 84%);
+
+    --hover-clr: hsl(172, 67%, 45%);
+    --dark-cyan: hsl(183, 100%, 15%);
+
+    --dark-grayish-cyan: hsl(186, 14%, 43%);
+    --grayish-cyan: hsl(184, 14%, 56%);
+
+    --vlg-cyan: hsl(189, 41%, 97%);
+    --white: hsl(0, 0%, 100%);
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+body {
+    max-width: 1440px;
+    background-color: var(--body-bg);
+    font-family: 'Space Mono', monospace;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+
+}
+
+.fs-input {
+    font-family: 'Space Mono', monospace;
+    font-size: 24px;
+}
+
+.dollar-icon {
+    padding-left: 25px;
+    background-image: url('images/icon-dollar.svg') no-repeat left;
+    background-size: 20px;
+}
+
+.btn {
+    padding: 5px 32px;
+    background: var(--dark-cyan);
+    color: var(--white);
+    border-radius: 5px;
+    border: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.logo {
+    width: 100px;
+}
+
+.wrapper {
+    margin-top: 6em;
+    background-color: var(--white);
+    padding: 35px;
+    border-radius: 2em;
+
+    display: flex;
+    gap: 2em;
+}
+
+.left-col,
+.right-col {
+    width: 50%;
+}
+
+.left-col label {
+    color: var(--dark-grayish-cyan);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.bill,
+.num-people {
+    width: 100%;
+    border-radius: 5px;
+    background: var(--vlg-cyan);
+    border: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.bill img {
+    width: 13px;
+    height: 20px;
+}
+
+.bill>input,
+.num-people>input {
+    outline: none;
+    border: none;
+    background: inherit;
+    text-align: right;
+    font-weight: 700;
+    color: var(--dark-cyan);
+    width: 95%;
+}
+
+.num-people img {
+    width: 15px;
+    height: 20px;
+}
+
+.tip-percent {
+    margin-block: 2em;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 1em;
+}
+
+.tip-percent>label {
+    padding-bottom: 10px;
+}
+
+
+.right-col {
+    background-color: var(--dark-cyan);
+    padding: 35px;
+    border-radius: 1em;
+    color: var(--white);
+}
+
+
+
+
+
+
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
