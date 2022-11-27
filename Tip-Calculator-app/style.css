@@ -274,7 +274,14 @@ input:focus-visible {
     cursor: pointer;
 }
 
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
 
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
 
 
 
@@ -341,13 +348,4 @@ input:focus-visible {
     #reset {
         margin-top: 2em;
     }
-}
-
-.attribution {
-    font-size: 11px;
-    text-align: center;
-}
-
-.attribution a {
-    color: hsl(228, 45%, 44%);
 }
