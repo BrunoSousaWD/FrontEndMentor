@@ -230,6 +230,7 @@ input:focus-visible {
     justify-content: space-between;
 }
 
+
 .amount {
     display: flex;
     flex-direction: row;
@@ -260,6 +261,7 @@ input:focus-visible {
     font-size: 2.5rem;
     font-weight: 700;
     color: var(--hover-clr);
+
 }
 
 #reset {
