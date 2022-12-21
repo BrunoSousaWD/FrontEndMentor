@@ -1,0 +1,176 @@
+/* style guide */
+/* -mobile: 375px
+- Desktop : 1440px
+
+### Primary
+
+- Linear gradient (active input border): hsl(249, 99%, 64%) to hsl(278, 94%, 30%)
+- Red (input errors): hsl(0, 100%, 66%)
+
+### Neutral
+
+- White: hsl(0, 0%, 100%)
+- Light grayish violet: hsl(270, 3%, 87%)
+- Dark grayish violet: hsl(279, 6%, 55%)
+- Very dark violet: hsl(278, 68%, 11%)
+
+## Typography
+
+### Body Copy
+
+- Font size: 18px
+
+### Font
+
+- Family: [Space Grotesk](https://fonts.google.com/specimen/Space+Grotesk)
+- Weights: 500 */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500&display=swap');
+
+:root {
+    --white: hsl(0, 0%, 100%);
+    --light-gray-violet: hsl(270, 3%, 87%);
+    --dark-gray-violet: hsl(279, 6%, 55%);
+    --darker-violet: hsl(278, 68%, 11%);
+
+    --input-error: hsl(0, 100%, 66%);
+    --border-gradient: linear-gradient(hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+}
+
+/* RESET */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+img,
+picture,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+}
+
+
+html {
+    color-scheme: dark light;
+}
+
+/* RESET END */
+.container {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+
+.card {
+    height: 100vh;
+    position: relative;
+}
+
+
+
+
+#back-card {
+    width: fit-content;
+    background-image: url('images/bg-card-back.png');
+    background-repeat: no-repeat;
+    position: relative;
+    top: -490px;
+    left: 250px;
+    z-index: 999;
+    margin: 0;
+}
+
+#front-card {
+    width: fit-content;
+    background-image: url('images/bg-card-front.png');
+    background-repeat: no-repeat;
+    position: relative;
+    top: -1050px;
+    left: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.front-card-info {
+    position: absolute;
+    width: 100%;
+    padding: 25px;
+}
+
+.card-num {
+    width: 100%;
+    text-align: left;
+    margin-top: 65px;
+    margin-bottom: 20px;
+    font-size: 28px;
+    letter-spacing: .2ch;
+    line-height: 1.5;
+    padding-inline: 0;
+}
+
+.card-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-name,
+.exp-date {
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 0.1ch;
+}
+
+.front-card-info img {
+    visibility: visible !important;
+}
+
+#back-card .cvc {
+    position: absolute;
+    bottom: 114px;
+    left: 350px;
+    letter-spacing: 0.2ch;
+
+}
+
+
+#back-card img,
+#front-card img {
+    visibility: hidden;
+}
+
+#back-card p,
+#front-card p {
+    color: var(--white);
+}
+
+form {
+    border: 1px solid green;
+    width: 28%;
+    margin: auto;
+}
+
+input {
+    margin-top: 5px;
+    margin-bottom: 20px;
+    width: 100%;
+}
