@@ -38,9 +38,9 @@
                 <img src="images/bg-card-front.png" alt="">
                 <div class="front-card-info">
                     <img src="images/card-logo.svg" alt="">
-                    <p class="card-num">0000 0000 0000 0000</p>
+                    <p class="card-num" id="cardNumb">0000 0000 0000 0000</p>
                     <div class="card-info">
-                        <p class="card-name">Jane Appleseed</p>
+                        <p class="card-name" id="cardName">Jane Appleseed</p>
                         <p class="exp-date">00/00</p>
                     </div>
                 </div>
@@ -51,10 +51,11 @@
         <form>
             <label for="ch-name">CARDHOLDER NAME</label>
             <br>
-            <input type="text" id="ch-name" name="ch-name" placeholder="e.g. Jane Appleseed">
+            <input type="text" id="ch-name" name="ch-name" placeholder="e.g. Jane Appleseed" maxlength="25" required>
+            <p class="error" id="errorName">Wrong format, letters only</p>
             <br>
             <label for="c-number">CARD NUMBER</label><br>
-            <input type="text" id="c-number" name="c-number" placeholder="e.g. 1234 5678 9123 0000">
+            <input type="text" id="c-number" name="c-number" placeholder="e.g. 1234 5678 9123 0000" required>
             <p class="error">Wrong format, numbers</p>
             <br>
             <div class="col">
@@ -95,7 +96,7 @@
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
         Coded by <a href="#">Your Name Here</a>.
     </div> -->
-
+    <script src="app.js"></script>
 </body>
 
 </html>
