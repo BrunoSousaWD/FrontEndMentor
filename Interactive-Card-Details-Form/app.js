@@ -14,9 +14,7 @@ inpCardNum.addEventListener('input', updateCardNum);
 
 
 function updateCardName(e) {
-
     cardHolderName.textContent = e.target.value;
-    return cardHolderName.textContent;
 }
 
 function updateCardNum(c) {
@@ -25,13 +23,13 @@ function updateCardNum(c) {
 
 function validate() {
     let regEx = /^[A-Za-z]+$/;
-    let match = cardHolderName.textContent.match(regEx);
 
-    if (cardHolderName.textContent !== match || cardHolderName.textContent == '') {
-        errName.style.display = 'block';
-    }
-    else if (cardHolderName.textContent == match) {
+    if (cardHolderName.textContent.match(regEx)) {
         errName.style.display = 'none';
+    }
+    else {
+        errName.style.display = 'block';
+        cardHolderName.textContent = '';
     }
 }
 
