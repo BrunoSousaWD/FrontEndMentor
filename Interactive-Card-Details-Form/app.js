@@ -5,8 +5,6 @@ let cardHolderNum = document.getElementById('cardNumb');
 let inpCardNum = document.getElementById('c-number');
 // console.log(cardHolderName);
 
-let errName = document.getElementById('errorName');
-
 inpCardName.addEventListener('input', updateCardName);
 inpCardName.addEventListener('input', validate);
 
@@ -18,11 +16,13 @@ function updateCardName(e) {
 }
 
 function updateCardNum(e) {
-    chn = cardHolderNum.textContent;
-    chn = e.target.value;
-
+    cardHolderNum.textContent = e.target.value;
 }
 
+
+
+
+let errName = document.getElementById('errorName');
 //verify if is letter
 function validate() {
     let regEx = /^[A-Za-z' ']+$/;
@@ -36,4 +36,14 @@ function validate() {
     }
 }
 
+
+
+
+//set max num length
+document.querySelectorAll('input[type="number"]').forEach(input => {
+    input.oninput = () => {
+        if (input.value.length > input.maxLength)
+            input.value = input.value.slice(0, input.maxLength);
+    };
+});
 
