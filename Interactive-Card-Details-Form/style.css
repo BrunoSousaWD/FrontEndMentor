@@ -129,6 +129,7 @@ body {
 }
 
 .card-num {
+    text-transform: capitalize;
     width: 100%;
     text-align: left;
     margin-top: 65px;
@@ -177,12 +178,14 @@ body {
 }
 
 form {
+    display: block;
     max-width: 25%;
     margin-left: 25%;
     margin-bottom: 100px;
 }
 
 input {
+
     margin-top: 5px;
     margin-bottom: 15px;
     width: 100%;

@@ -15,25 +15,6 @@ let cvc = document.getElementById('cvc-display');
 
 
 
-
-
-inpCardName.addEventListener('input', updateCardName);
-inpCardName.addEventListener('input', validate);
-
-inpCardNum.addEventListener('input', updateCardNum);
-inpCardNum.addEventListener('input', validateNum);
-
-inpMonth.addEventListener('input', updateMonth);
-inpMonth.addEventListener('input', maxNum);
-inpYear.addEventListener('input', updateYear);
-
-inpCvc.addEventListener('input', updateCvc);
-
-document.getElementById('sub-btn').addEventListener('click', function () {
-    complete.style.display = 'block';
-    form.style.display = ' none';
-})
-
 function updateCardName(e) {
     cardHolderName.textContent = e.target.value;
 }
@@ -44,10 +25,11 @@ function updateCardNum(e) {
 
 function updateMonth(e) {
     mth.textContent = e.target.value;
+
 }
 
 function updateYear(e) {
-    if (e.target.value > 21 & e.target.value < 33) {
+    if (e.target.value > 21 & e.target.value < 33 || e.target.value == ! ' ') {
         yr.textContent = e.target.value;
         errorDate.style.display = 'none';
         inpYear.style.border = '';
@@ -66,6 +48,9 @@ function updateCvc(e) {
         }
         else if (e.target.value < 100) {
             cvc.textContent = '0' + e.target.value;
+        }
+        else if (e.target.value === '') {
+            inpCvc.style.border = '1px solid red';
         }
     }
     else {
@@ -90,22 +75,20 @@ function validate() {
         inpCardName.style.border = '1px solid red';
         cardHolderName.textContent = '';
     }
-
-
 }
 
 //verify if numb or space
+
 function validateNum() {
     let num = /^[0-9' ']+$/;
-
     if (cardHolderNum.textContent.match(num)) {
         errNum.style.display = 'none';
         inpCardNum.style.border = '';
     }
+
     else {
         errNum.style.display = 'block';
         inpCardNum.style.border = '1px solid red';
-        cardHolderNum.textContent = '';
     }
 }
 
@@ -114,30 +97,82 @@ function maxNum() {
     if (mth.textContent > 12) {
         mth.textContent = 12;
         errorDate.style.display = 'block';
+        inpMonth.style.border = '1px solid red';
     }
     else if (mth.textContent <= 0) {
         mth.textContent = '01';
         errorDate.style.display = 'none';
     }
-
+    else {
+        errorDate.style.display = 'none';
+        inpMonth.style.border = '';
+    }
 }
 
 //set max num length
 document.querySelectorAll('input[type="number"]').forEach(input => {
     input.oninput = () => {
-        if (input.value.length > input.maxLength)
+        if (input.value.length > input.maxLength) {
             input.value = input.value.slice(0, input.maxLength);
+        }
+
     };
 });
 
 
 //Submit
+function validateForm() {
+    let errorCvc = document.getElementById('errorCvc');
+    let notLetter = "^[0-9*#+]+$";
 
-function Submit() {
-    let isEmpty = str => !str.trim().length;
-    if (isEmpty(this.value)) {
-        console.log("NAME is invalid (Empty)")
-    } else {
-        console.log(`NAME value is: ${this.value}`);
+    if (inpCardName.value === "" || inpCardName.value.match(notLetter)) {
+        errName.style.display = 'block';
+        inpCardName.style.border = '1px solid red';
     }
+    else if (inpCardNum.value === '' || inpCardNum.value.length < 16) {
+        errNum.style.display = 'block';
+        inpCardNum.style.border = '1px solid red';
+    }
+    else if (inpMonth.value === '') {
+        errorShow.style.display = 'block';
+        inpMonth.style.border = '1px solid red';
+
+    }
+    else if (inpYear.value === '' || inpYear.value > 32 || inpYear.value < 20) {
+        error.style.display = 'block';
+        inpYear.style.border = '1px solid red';
+    }
+    else if (inpCvc.value === '') {
+        inpCvc.style.border = '1px solid red';
+        errorCvc.style.display = 'block';
+    }
+    else {
+        complete.style.display = 'block';
+        form.style.display = ' none';
+    }
+}
+
+document.getElementById('sub-btn').addEventListener('click', function (e) {
+    e.preventDefault();
+    validateForm();
+})
+
+
+
+inpCardName.addEventListener('input', updateCardName);
+inpCardName.addEventListener('input', validate);
+
+inpCardNum.addEventListener('input', updateCardNum);
+inpCardNum.addEventListener('input', validateNum);
+
+inpMonth.addEventListener('input', updateMonth);
+inpMonth.addEventListener('input', maxNum);
+inpYear.addEventListener('input', updateYear);
+
+inpCvc.addEventListener('input', updateCvc);
+
+
+//Reload Page
+function reload() {
+    location.reload();
 }
