@@ -91,7 +91,7 @@ li {
 header {
     position: relative;
     background-color: var(--header-bg);
-    padding-bottom: 135px;
+    padding-bottom: 140px;
 }
 
 header .waves {
@@ -118,7 +118,7 @@ header .waves {
 .intro {
     text-align: center;
     position: relative;
-    padding-bottom: 80px;
+    padding-bottom: 60px;
     z-index: 999;
 }
 
@@ -135,7 +135,7 @@ header .waves {
 .intro p {
     font-size: 1rem;
     line-height: 1.5;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
 }
 
 .btn {
@@ -146,4 +146,143 @@ header .waves {
     font-weight: bold;
 
     background: linear-gradient(90deg, hsl(176, 68%, 64%)0%, hsl(198, 60%, 50%)100%);
+}
+
+
+/*main*/
+
+.features {
+    max-width: 1050px;
+    margin-inline: auto;
+}
+
+.first-row,
+.second-row {
+    display: flex;
+    justify-content: space-around;
+    gap: 8em;
+    margin: 0 auto;
+}
+
+.first-row {
+    margin-bottom: 6em;
+}
+
+.right,
+.left {
+    max-width: 40%;
+    text-align: center;
+}
+
+.right img,
+.left img {
+    margin-bottom: 2em;
+}
+
+.right p,
+.left p {
+    line-height: 1.5;
+}
+
+h3 {
+    margin-bottom: 1em;
+}
+
+.second-row {
+    margin-bottom: 9em;
+}
+
+/*banner*/
+.banner {
+    margin-bottom: 10em;
+}
+
+.banner .container {
+    display: flex;
+    align-items: center;
+    gap: 4em;
+}
+
+.stay-productive h2 {
+    font-size: 2.5rem;
+    margin-bottom: .65em;
+}
+
+.stay-productive p {
+    padding-right: 70px;
+    line-height: 1.5;
+    margin-bottom: 1em;
+    font-size: .9rem;
+}
+
+.stay-productive a {
+    color: hsl(176, 68%, 64%);
+    font-size: .9rem;
+    padding-bottom: 5px;
+    border-bottom: 1px solid hsl(176, 68%, 64%);
+}
+
+.stay-productive a i {
+    font-size: .65rem;
+    margin-left: 2px;
+    margin-top: 1em;
+}
+
+/** CARDS*/
+.cards {
+    margin-bottom: 10em;
+    position: relative;
+    margin-inline: 3em;
+}
+
+.cards .bq-quote {
+    position: absolute;
+    top: -35px;
+    left: 60px;
+    z-index: -1;
+}
+
+.cards .container {
+    display: flex;
+    gap: 4em;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 45px 30px 25px 30px;
+    border-radius: 5px;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.27);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.27);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.27);
+}
+
+
+
+.card p {
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+.profiles {
+    display: flex;
+    margin-top: 1.5em;
+    align-items: center;
+    gap: 1em;
+}
+
+.profiles img {
+    width: 30px;
+    border-radius: 50%;
+}
+
+.profile-info .name {
+    font-weight: 700;
+    font-size: .7rem;
+
+}
+
+.profile-info .position {
+    font-size: .5rem;
+    letter-spacing: .15ch;
+    margin-top: .1em;
 }
