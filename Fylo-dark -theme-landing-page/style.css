@@ -81,6 +81,10 @@ li {
     list-style: none;
 }
 
+p {
+    line-height: 1.5;
+}
+
 /* reset end */
 
 .container {
@@ -230,7 +234,7 @@ h3 {
 
 /** CARDS*/
 .cards {
-    margin-bottom: 10em;
+    margin-bottom: 15em;
     position: relative;
     margin-inline: 3em;
 }
@@ -285,4 +289,143 @@ h3 {
     font-size: .5rem;
     letter-spacing: .15ch;
     margin-top: .1em;
+}
+
+/* Call to action */
+
+.call-to-action {
+    margin-bottom: 6em;
+    position: relative;
+    z-index: 999;
+    max-width: 60%;
+    margin-inline: auto;
+
+    text-align: center;
+    background: var(--header-bg);
+    padding: 50px 80px;
+    border-radius: 5px;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.27);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.27);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.27);
+}
+
+.call-to-action h2 {
+    font-size: 2rem;
+    margin-bottom: .6em;
+}
+
+.call-to-action p {
+    margin-bottom: 2.5em;
+    padding-inline: 50px;
+}
+
+input[type='email'] {
+    padding: 15px 230px 15px 35px;
+    text-align: left;
+    border-radius: 50px;
+    margin-right: 20px;
+    border: none;
+}
+
+input[type='email']::placeholder {
+    opacity: .5;
+    font-size: .85em;
+}
+
+.email-form button {
+    padding: 15px 35px;
+    background: linear-gradient(90deg, hsl(176, 68%, 64%)25%, hsl(198, 60%, 50%)100%);
+    border-radius: 50px;
+    border: none;
+    color: white;
+    font-weight: bold;
+}
+
+/** footer **/
+footer {
+    position: relative;
+    top: -200px;
+    background: var(--footer-bg);
+    padding-top: 15em;
+    padding-bottom: 5em;
+}
+
+
+.footer {
+    margin-top: 2.5em;
+    display: flex;
+
+    align-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-info,
+.contact,
+.usefull-links {
+    flex: 1;
+    justify-content: center;
+    border: 1px solid lime;
+}
+
+.footer-info img {
+    position: relative;
+    top: -41px;
+    inset: 1;
+}
+
+.footer p,
+.footer li {
+    margin-bottom: 1em;
+    font-size: .85rem;
+}
+
+.contact {
+    flex: 1;
+    display: flex;
+}
+
+.contact .phone {
+    margin-bottom: 1em;
+}
+
+.contact .phone,
+.contact .email {
+    display: flex;
+    gap: 2em;
+}
+
+.contact .phone p,
+.contact .email p {
+    margin-bottom: 0;
+}
+
+
+.footer-info p {
+    display: inline-block;
+    margin-left: 1em;
+}
+
+
+.usefull-links {
+    display: flex;
+    gap: 5em;
+}
+
+.social-media {
+    display: flex;
+    gap: 2em;
+}
+
+.social i:not(.social-face) {
+    border: 1px solid white;
+    padding: 8px;
+    border-radius: 50%;
+    font-size: 1em;
+    text-align: center;
+}
+
+.social-face {
+    border: 1px solid white;
+    padding: 8px 10px;
+    border-radius: 50%;
 }
