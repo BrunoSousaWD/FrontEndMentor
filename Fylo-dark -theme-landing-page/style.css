@@ -55,6 +55,11 @@ body {
     height: 100vh;
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 10em;
+}
+
 body {
     max-width: 1440px;
     background-color: var(--body-bg);
@@ -119,6 +124,15 @@ header .waves {
     gap: 4em;
 }
 
+#navbar ul a {
+    opacity: .7;
+}
+
+#navbar ul a:hover {
+    text-decoration: underline;
+    opacity: 1;
+}
+
 .intro {
     text-align: center;
     position: relative;
@@ -148,8 +162,12 @@ header .waves {
     border: none;
     color: white;
     font-weight: bold;
-
+    cursor: pointer;
     background: linear-gradient(90deg, hsl(176, 68%, 64%)0%, hsl(198, 60%, 50%)100%);
+}
+
+.btn:hover {
+    background: hsl(176, 68%, 64%);
 }
 
 
@@ -226,11 +244,16 @@ h3 {
     border-bottom: 1px solid hsl(176, 68%, 64%);
 }
 
+.stay-productive a:hover {
+    color: white;
+}
+
 .stay-productive a i {
     font-size: .65rem;
     margin-left: 2px;
     margin-top: 1em;
 }
+
 
 /** CARDS*/
 .cards {
@@ -293,7 +316,7 @@ h3 {
 
 /* Call to action */
 
-.call-to-action {
+#call-to-action {
     margin-bottom: 6em;
     position: relative;
     z-index: 999;
@@ -302,34 +325,37 @@ h3 {
 
     text-align: center;
     background: var(--header-bg);
-    padding: 50px 80px;
+    padding: 30px 80px;
     border-radius: 5px;
     box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.27);
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.27);
     -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.27);
 }
 
-.call-to-action h2 {
+#call-to-action h2 {
     font-size: 2rem;
+    padding-top: .6em;
     margin-bottom: .6em;
 }
 
-.call-to-action p {
-    margin-bottom: 2.5em;
+#call-to-action p {
+    margin-bottom: 3em;
     padding-inline: 50px;
 }
 
 input[type='email'] {
-    padding: 15px 230px 15px 35px;
+    padding: 15px 15px 15px 35px;
     text-align: left;
     border-radius: 50px;
     margin-right: 20px;
     border: none;
+
 }
 
 input[type='email']::placeholder {
     opacity: .5;
     font-size: .85em;
+
 }
 
 .email-form button {
@@ -341,47 +367,75 @@ input[type='email']::placeholder {
     font-weight: bold;
 }
 
+#error {
+    color: red;
+    text-align: left;
+    margin-left: 5em;
+    margin-top: .6em;
+    font-size: .7rem;
+    display: block;
+    opacity: 0;
+}
+
 /** footer **/
 footer {
     position: relative;
     top: -200px;
     background: var(--footer-bg);
-    padding-top: 15em;
+    padding-top: 12em;
     padding-bottom: 5em;
 }
 
+.footer-logo {
+    max-width: 12%;
+}
 
 .footer {
     margin-top: 2.5em;
     display: flex;
-
     align-content: space-between;
     flex-wrap: wrap;
 }
 
+
 .footer-info,
-.contact,
 .usefull-links {
     flex: 1;
     justify-content: center;
-    border: 1px solid lime;
+
 }
 
 .footer-info img {
     position: relative;
     top: -41px;
     inset: 1;
+
 }
 
 .footer p,
 .footer li {
     margin-bottom: 1em;
     font-size: .85rem;
+    opacity: .8;
 }
+
+
+
+.footer li:hover {
+    opacity: 1;
+    text-shadow: 1px 0;
+}
+
+
 
 .contact {
     flex: 1;
-    display: flex;
+}
+
+.wrapper {
+    display: block;
+    max-width: 50%;
+    margin: 0 auto;
 }
 
 .contact .phone {
@@ -392,11 +446,13 @@ footer {
 .contact .email {
     display: flex;
     gap: 2em;
+    align-items: center;
 }
 
 .contact .phone p,
 .contact .email p {
     margin-bottom: 0;
+    padding-right: 0;
 }
 
 
@@ -416,6 +472,8 @@ footer {
     gap: 2em;
 }
 
+
+
 .social i:not(.social-face) {
     border: 1px solid white;
     padding: 8px;
@@ -428,4 +486,10 @@ footer {
     border: 1px solid white;
     padding: 8px 10px;
     border-radius: 50%;
+}
+
+.social:hover,
+.social i:hover {
+    color: hsl(176, 68%, 64%);
+    border-color: hsl(176, 68%, 64%);
 }
