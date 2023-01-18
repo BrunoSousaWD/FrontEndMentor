@@ -51,16 +51,13 @@ The designs were created to the following widths:
 
 html,
 body {
-    max-width: 100%;
     height: 100vh;
-    overflow-x: hidden;
-
+    width: 100%;
 }
 
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 10em;
-
 }
 
 body {
@@ -186,6 +183,9 @@ header .waves-phone {
 
 
 /*main*/
+main {
+    background-color: hsl(218, 28%, 13%);
+}
 
 .features {
     max-width: 1050px;
@@ -242,6 +242,7 @@ h3 {
 .stay-productive h2 {
     font-size: 2.5rem;
     margin-bottom: .65em;
+    padding-right: 100px;
 }
 
 .stay-productive p {
@@ -331,7 +332,7 @@ h3 {
 /* Call to action */
 
 #call-to-action {
-    margin-bottom: 6em;
+    margin-bottom: -9em;
     position: relative;
     z-index: 999;
     max-width: 60%;
@@ -393,8 +394,6 @@ input[type='email']::placeholder {
 
 /** footer **/
 footer {
-    position: relative;
-    top: -200px;
     background: var(--footer-bg);
     padding-top: 12em;
     padding-bottom: 5em;
@@ -421,9 +420,14 @@ footer {
 
 .footer-info img {
     position: relative;
-    top: -41px;
-    inset: 1;
+    top: 8px;
+}
 
+
+.footer-info p {
+    display: inline-block;
+    margin-left: 3em;
+    margin-top: -20px;
 }
 
 .footer p,
@@ -470,10 +474,7 @@ footer {
 }
 
 
-.footer-info p {
-    display: inline-block;
-    margin-left: 1em;
-}
+
 
 
 .usefull-links {
@@ -510,7 +511,7 @@ footer {
 
 @media (max-width:375px) {
     body {
-        height: auto;
+        height: 100vh;
     }
 
     .container {
@@ -548,23 +549,211 @@ footer {
 
     header .waves-desk {
         display: none;
-
     }
 
     header .waves-phone {
         display: block;
         width: 100%;
         position: relative;
-        bottom: 370px;
+        bottom: 430px;
     }
 
     /* features*/
+
+    main {
+        background: hsl(218, 28%, 13%);
+        padding-top: 25em;
+        position: relative;
+        bottom: 430px;
+    }
+
     .first-row,
-    .second-row {
+    .second-row,
+    .banner .container,
+    .cards .container,
+    .usefull-links {
         display: block;
-        margin: 0 auto;
+    }
+
+    .left,
+    .right {
+        max-width: 100%;
+    }
+
+    .right {
+        margin-top: 6em;
+    }
+
+    .banner {
+        margin-bottom: 13em;
+    }
+
+    .banner img {
+        display: block;
         width: 100%;
     }
 
+    .stay-productive h2 {
+        font-size: 1rem;
+        margin-top: 1.5em;
+        padding-right: 0;
+    }
 
+    .stay-productive p {
+        padding-right: 0;
+        font-size: .8rem;
+    }
+
+    .cards {
+        position: relative;
+        z-index: 99;
+        margin-inline: 1.5em;
+        font-size: .55rem;
+        margin-bottom: 11em;
+    }
+
+    .cards .bq-quote {
+        width: 10%;
+        top: -23px;
+        left: 32px;
+        z-index: -1;
+    }
+
+    .card {
+        margin-bottom: 3em;
+        padding: 25px 25px 20px 25px;
+    }
+
+    .card p {
+        line-height: 2;
+        opacity: .9;
+    }
+
+    .profiles {
+        margin-top: 1.5em;
+
+    }
+
+    .profile-info .name {
+        font-size: .6rem;
+    }
+
+    .profile-info p {
+        line-height: 1.5;
+    }
+
+    .profile-info .position {
+        font-size: .45rem;
+        margin-top: 0;
+    }
+
+    #call-to-action {
+        max-width: 85%;
+        border-radius: 13px;
+        padding: 30px 20px;
+        margin-bottom: -12em;
+    }
+
+    #call-to-action h2 {
+        font-size: 1rem;
+    }
+
+    #call-to-action p {
+        padding: 0;
+    }
+
+
+    input[type='email'] {
+        max-width: 100%;
+        margin-bottom: 1.3em;
+    }
+
+    input[type='email']::placeholder {
+        opacity: .5;
+        font-size: .75em;
+    }
+
+    .email-form button {
+        width: 100%;
+        font-size: .8rem;
+        background: linear-gradient(90deg, hsl(176, 68%, 64%)25%, hsl(198, 60%, 50%)100%);
+        border-radius: 50px;
+        border: none;
+        color: white;
+        font-weight: bold;
+    }
+
+    #error {
+        text-align: center;
+        font-size: .5rem;
+        margin-left: 0;
+    }
+
+    footer {
+        position: relative;
+        margin-top: -44em;
+        padding-top: 18em;
+    }
+
+    .footer-logo {
+        max-width: 100%;
+    }
+
+    .footer {
+        display: block;
+        margin-top: 1em;
+    }
+
+    .footer-info {
+        display: inline-block;
+    }
+
+    .footer-info p {
+        margin-top: 0;
+        margin-left: 3em;
+        font-size: .85rem;
+    }
+
+    .footer-info img {
+        position: relative;
+        top: 25px;
+    }
+
+    .wrapper {
+        max-width: 100%;
+    }
+
+    .usefull-links {
+        margin-top: 6em;
+    }
+
+    .links-right {
+        margin-top: 3em;
+        margin-bottom: 6em;
+    }
+
+    .social-media {
+        gap: 1em;
+        justify-content: center;
+
+    }
+
+    .social i:not(.social-face) {
+        padding: 6px;
+    }
+
+    .social-face {
+        padding: 6px 8px;
+    }
+
+    .social i:not(.social-face),
+    .social i {
+        font-size: .65rem;
+    }
+
+    .attribution {
+        font-size: 7px;
+        text-align: center;
+        padding-bottom: 0;
+    }
 }
