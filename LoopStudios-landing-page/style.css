@@ -1,0 +1,121 @@
+/* # Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+- White: hsl(0, 0%, 100%)
+- Black: hsl(0, 0%, 0%)
+- Dark Gray: hsl(0, 0%, 55%)
+- Very Dark Gray: hsl(0, 0%, 41%)
+
+### Neutral
+
+## Typography
+
+### Body Copy
+
+- Font size: 15px
+
+### Fonts
+
+- Family: [Alata](https://fonts.google.com/specimen/Alata)
+- Weight: 400
+
+- Family: [Josefin Sans](https://fonts.google.com/specimen/Josefin+Sans)
+- Weight: 300 */
+
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap');
+
+
+/* RESET */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+img,
+picture,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+body {
+    min-height: 100vh;
+    font-size: 15px;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/**/
+.container {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.hide {
+    visibility: hidden;
+    position: absolute;
+}
+
+.hero {
+    background-image: url('images/desktop/image-hero.jpg');
+    padding-bottom: 20em;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+header {
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-bottom: 7em;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2.5em;
+    margin-bottom: 8em;
+}
+
+nav ul {
+    display: flex;
+    gap: 2em;
+    align-items: center;
+    margin-right: 2em;
+}
+
+.title {
+    border: 1px solid white;
+    max-width: 50%;
+    font-size: 3rem;
+    text-transform: uppercase;
+    padding: 30px;
+}
