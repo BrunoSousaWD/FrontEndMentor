@@ -56,11 +56,16 @@ video {
     font: inherit;
 }
 
+html {
+    background: #000;
+}
+
 body {
     min-height: 100vh;
     font-size: 15px;
     max-width: 1440px;
     margin: 0 auto;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 ol,
@@ -74,48 +79,160 @@ a {
 
 /**/
 .container {
-    max-width: 80%;
+    max-width: 77%;
     margin: 0 auto;
 }
 
-.hide {
-    visibility: hidden;
-    position: absolute;
-}
-
-.hero {
-    background-image: url('images/desktop/image-hero.jpg');
-    padding-bottom: 20em;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
 
 header {
-
-    background-size: cover;
-    background-position: center;
+    position: relative;
+    background-image: url('images/desktop/image-hero.jpg');
     background-repeat: no-repeat;
-    padding-bottom: 7em;
+    padding-bottom: 7rem;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
-    padding-top: 2.5em;
-    margin-bottom: 8em;
+    margin-bottom: 8.5em;
+    padding-top: 4.3em;
 }
 
 nav ul {
     display: flex;
-    gap: 2em;
+    gap: 2.3em;
     align-items: center;
-    margin-right: 2em;
+}
+
+nav ul li a {
+    position: relative;
+    color: white;
+    font-family: 'Alata', sans-serif;
+    font-size: .81rem;
+    font-weight: 100;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 30px;
+    width: 0%;
+    margin: auto;
+    background: white;
+    height: 2px;
+    transition: .2s ease;
+}
+
+nav ul li a:hover::after {
+    width: 50%;
 }
 
 .title {
-    border: 1px solid white;
-    max-width: 50%;
-    font-size: 3rem;
+    border: 2px solid white;
+    max-width: 58.7%;
+}
+
+.title h1 {
+    color: white;
+    font-size: 4rem;
     text-transform: uppercase;
-    padding: 30px;
+    padding: 37px 30px 37px 30px;
+}
+
+/*main*/
+
+main {
+    background: white;
+    padding-top: 10em;
+}
+
+#lead {
+    position: relative;
+    padding-bottom: 10em;
+}
+
+.description {
+    background: white;
+    max-width: 50%;
+    position: absolute;
+    right: 0;
+    top: 195px;
+    padding: 85px 0 0 85px;
+}
+
+.description h2 {
+    font-size: 2.68rem;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.description p {
+    font-family: 'Alata', sans-serif;
+    line-height: 1.5;
+    margin-top: 2em;
+    font-size: .87rem;
+    color: hsl(0, 0%, 55%);
+}
+
+
+/* Creations*/
+#creations {
+    padding-top: 3em;
+    padding-bottom: 10em;
+}
+
+.creations-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 6em;
+}
+
+.creations-title {
+    font-size: 2.8rem;
+}
+
+.creations-button {
+    background: #000;
+    color: white;
+    font-size: .85rem;
+    font-family: 'Alata', sans-serif;
+    letter-spacing: .3ch;
+    padding: 10px 40px;
+    cursor: pointer;
+}
+
+
+.cards-top-row,
+.cards-bot-row {
+    display: flex;
+    gap: 1.5em;
+}
+
+.cards-top-row {
+    margin-bottom: 1.5em;
+}
+
+.card {
+    position: relative;
+}
+
+.card span {
+    position: absolute;
+    color: white;
+    font-size: 1.85rem;
+    bottom: 32px;
+    left: 35px;
+}
+
+
+.soccer-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0) linear-gradient(to bottom, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0.6) 100%);
 }

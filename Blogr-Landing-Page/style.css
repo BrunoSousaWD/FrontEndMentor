@@ -123,9 +123,6 @@ header {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-
-
-
 }
 
 .nav-items {
@@ -161,7 +158,7 @@ header {
     top: -1px;
 }
 
-.nav-items .log li a {
+.nav-items .login a {
     color: rgba(255, 255, 255, 0.905);
     font-weight: 600;
 }
