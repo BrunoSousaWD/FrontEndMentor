@@ -114,7 +114,7 @@ nav ul li a {
 
 nav ul li a::after,
 .footer-nav ul li a::after,
-.social-link img::after {
+.social-link::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -129,10 +129,10 @@ nav ul li a::after,
 }
 
 nav ul li a:hover::after,
-.footer-nav ul li a:hover::after,
-.social-link img:hover::after {
+.footer-nav ul li a:hover::after {
     width: 50%;
 }
+
 
 .title {
     border: 2px solid white;
@@ -286,15 +286,14 @@ footer {
     position: relative;
 }
 
-/* .social-media img::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    width: 50%;
-    height: 1px;
-    background: white;
-    
-} */
+
+.social-link {
+    position: relative;
+}
+
+.social-link:hover::after {
+    width: 100%;
+}
 
 .footer-bottom {
     display: flex;
