@@ -214,11 +214,11 @@ main {
 .cards-top-row,
 .cards-bot-row {
     display: flex;
-    gap: 1.5em;
+    gap: 2em;
 }
 
 .cards-top-row {
-    margin-bottom: 1.5em;
+    margin-bottom: 2em;
 }
 
 .card {
@@ -289,6 +289,7 @@ footer {
 
 .social-link {
     position: relative;
+    cursor: pointer;
 }
 
 .social-link:hover::after {
