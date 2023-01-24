@@ -133,6 +133,13 @@ nav ul li a:hover::after,
     width: 50%;
 }
 
+#hamburger-menu {
+    display: none;
+}
+
+#close-menu {
+    display: none;
+}
 
 .title {
     border: 2px solid white;
@@ -210,6 +217,9 @@ main {
     cursor: pointer;
 }
 
+.creations-button-mobile {
+    display: none;
+}
 
 .cards-top-row,
 .cards-bot-row {
@@ -315,4 +325,134 @@ footer {
 .disclaimer {
     font-family: 'Alata', sans-serif;
     color: hsl(0, 0%, 55%);
+}
+
+/** mobile settings **/
+
+@media (max-width:375px) {
+    .container {
+        max-width: 90%;
+    }
+
+    nav {
+        display: block;
+        position: relative;
+        z-index: 999;
+        /* position: absolute;
+        background: #000;
+        width: 100%;
+        inset: 0; */
+    }
+
+    .nav-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 90%;
+        margin: auto;
+    }
+
+    #hamburger-menu {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        max-width: 90%;
+        margin-inline: auto;
+        margin-top: 6em;
+    }
+
+    nav ul li a {
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 1.95rem;
+        text-transform: uppercase;
+        opacity: .8;
+        line-height: 1.8;
+    }
+
+    header {
+        height: 100vh;
+        padding-bottom: 0rem;
+        background-image: url('images/mobile/image-hero.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+
+    }
+
+    .title {
+        max-width: 100%;
+    }
+
+    .title h1 {
+        font-size: 2.5rem;
+    }
+
+    /*main*/
+    .description {
+        position: relative;
+        max-width: 100%;
+        top: 0;
+        margin-top: 3.5em;
+        padding: 0 25px 0 25px;
+        text-align: center;
+    }
+
+    .description h2 {
+        font-size: 1.85rem;
+    }
+
+    .description p {
+        margin-top: 1em;
+    }
+
+    #lead {
+        padding-bottom: 5em;
+    }
+
+    /*creations*/
+    #creations {
+        padding-bottom: 5em;
+    }
+
+    .creations-header {
+        margin-bottom: 3em;
+    }
+
+    .creations-title {
+        margin: auto;
+        font-size: 1.85rem;
+    }
+
+    .creations-button {
+        display: none;
+    }
+
+    .cards-top-row,
+    .cards-bot-row {
+        display: block;
+    }
+
+    .card {
+        margin-bottom: 2em;
+    }
+
+    .card span {
+        font-size: 1.25rem;
+        bottom: 20px;
+        left: 20px;
+    }
+
+    .creations-button-mobile {
+        display: block;
+        text-align: center;
+        margin: auto;
+        width: 50%;
+        border: 1px solid black;
+        font-size: .85rem;
+        font-family: 'Alata', sans-serif;
+        letter-spacing: .4ch;
+        padding: 10px 40px;
+        cursor: pointer;
+    }
 }
