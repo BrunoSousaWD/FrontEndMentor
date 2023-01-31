@@ -1,0 +1,239 @@
+/*
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+- Bright Blue: hsl(220, 98%, 61%)
+- Check Background: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%)
+
+### Neutral
+
+### Light Theme
+
+- Very Light Gray: hsl(0, 0%, 98%)
+- Very Light Grayish Blue: hsl(236, 33%, 92%)
+- Light Grayish Blue: hsl(233, 11%, 84%)
+- Dark Grayish Blue: hsl(236, 9%, 61%)
+- Very Dark Grayish Blue: hsl(235, 19%, 35%)
+
+### Dark Theme
+
+- Very Dark Blue: hsl(235, 21%, 11%)
+- Very Dark Desaturated Blue: hsl(235, 24%, 19%)
+- Light Grayish Blue: hsl(234, 39%, 85%)
+- Light Grayish Blue (hover): hsl(236, 33%, 92%)
+- Dark Grayish Blue: hsl(234, 11%, 52%)
+- Very Dark Grayish Blue: hsl(233, 14%, 35%)
+- Very Dark Grayish Blue: hsl(237, 14%, 26%)
+
+## Typography
+
+### Body Copy
+
+- Font size: 18px
+
+### Font
+
+- Family: [Josefin Sans](https://fonts.google.com/specimen/Josefin+Sans)
+- Weights: 400, 700
+
+*/
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+:root {
+    --clr-text: hsl(235, 21%, 11%);
+    --clr-vlg: hsl(0, 0%, 98%);
+    --clr-vlgb: hsl(236, 33%, 92%);
+    --clr-lgb: hsl(233, 11%, 84%);
+    --clr-secondary: hsl(236, 9%, 61%);
+    --clr-primary: hsl(235, 19%, 35%);
+
+}
+
+.darkmode {
+    --clr-bg-body: hsl(235, 21%, 11%);
+    --clr-main: hsl(235, 24%, 19%);
+    --clr-primary: hsl(234, 39%, 85%);
+    --clr-primary-hover: hsl(236, 33%, 92%);
+    --clr-border: hsl(234, 11%, 52%);
+    --clr-completed: hsl(233, 14%, 35%);
+    --clr-comp: hsl(237, 14%, 26%);
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+img,
+picture,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+body {
+    max-width: 1440px;
+    margin: 0 auto;
+    min-height: 100vh;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 18px;
+}
+
+
+html {
+    color-scheme: dark light;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* main */
+body {
+    background: var(--clr-vlg);
+}
+
+
+
+.dark-bg {
+    display: none;
+}
+
+.container {
+    max-width: 37.5%;
+    margin: 0 auto;
+    position: relative;
+    bottom: 222px;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    margin-bottom: 3em;
+}
+
+.title p {
+    font-size: 1.95rem;
+    letter-spacing: .7ch;
+    font-weight: 700;
+}
+
+.title img:hover {
+    cursor: pointer;
+}
+
+.todo-input {
+    display: flex;
+    gap: 1em;
+    padding: 20px;
+    border-radius: 5px;
+    background: white;
+    margin-bottom: 1.5em;
+}
+
+.todo-input input[type='text'] {
+    width: 90%;
+    border: none;
+    outline: none;
+}
+
+.todo-input input[type='checkbox'],
+.list ul li input[type='checkbox'] {
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border: 1px solid var(--clr-vlgb);
+    border-radius: 50%;
+}
+
+.todo-input input[type='checkbox']:checked {
+    background: green;
+    background-image: url('images/icon-check.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.list {
+    background: white;
+    border-radius: 5px;
+}
+
+.list ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid var(--clr-lgb);
+}
+
+.list ul li img {
+    display: none;
+}
+
+.list ul li:hover img {
+    display: block;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: .75rem;
+    padding: 20px;
+}
+
+footer p {
+    color: var(--clr-secondary);
+}
+
+footer .nav {
+    display: flex;
+    gap: 1em;
+    color: var(--clr-secondary);
+    font-weight: 700;
+}
+
+.footer .nav a,
+footer .clear {
+    cursor: pointer;
+
+}
+
+footer a:focus {
+    color: blue;
+}
+
+
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
