@@ -227,7 +227,13 @@ footer a:focus {
     color: blue;
 }
 
-
+.description {
+    position: relative;
+    bottom: 150px;
+    font-size: .8rem;
+    color: var(--clr-secondary);
+    text-align: center;
+}
 
 .attribution {
     font-size: 11px;
