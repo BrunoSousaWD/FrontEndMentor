@@ -122,6 +122,12 @@ body {
     display: none;
 }
 
+
+.checked {
+    text-decoration: line-through;
+    color: var(--clr-lgb);
+}
+
 .container {
     max-width: 37.5%;
     margin: 0 auto;
@@ -169,34 +175,74 @@ body {
     height: 25px;
     border: 1px solid var(--clr-vlgb);
     border-radius: 50%;
+    cursor: pointer;
 }
 
-.todo-input input[type='checkbox']:checked {
-    background: green;
+.todo-input input[type='checkbox']:hover,
+.list ul li input[type='checkbox']:checked {
+    background-image: linear-gradient(150deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+    position: relative;
+}
+
+
+
+.todo-input input[type='checkbox']:hover::after,
+.list ul li input[type='checkbox']:checked::after {
+    content: '';
+    display: block;
+    position: relative;
+    z-index: 999;
+    inset: 0;
     background-image: url('images/icon-check.svg');
     background-repeat: no-repeat;
     background-position: center;
+    width: 25px;
+    height: 25px;
 }
+
+/* .todo-input input[type='checkbox']:hover:not(:checked), */
+.list ul li input[type='checkbox']:hover:not(:checked) {
+    background: linear-gradient(white, white) padding-box,
+        linear-gradient(150deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%)) border-box;
+    border-radius: 50%;
+    border: 1px solid transparent;
+}
+
+#error {
+    display: none;
+    position: relative;
+    bottom: 20px;
+    color: rgb(255, 0, 0);
+    margin-left: 20px;
+    font-size: .95rem;
+}
+
 
 .list {
     background: white;
     border-radius: 5px;
+    -webkit-box-shadow: 5px 5px 22px 7px rgba(0, 0, 0, 0.16);
+    box-shadow: 5px 5px 22px 7px rgba(0, 0, 0, 0.16);
 }
 
 .list ul li {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 10fr 1fr;
     align-items: center;
     padding: 20px;
     border-bottom: 1px solid var(--clr-lgb);
 }
 
+
+
 .list ul li img {
     display: none;
+    float: right;
 }
 
 .list ul li:hover img {
     display: block;
+    cursor: pointer;
 }
 
 footer {
@@ -224,8 +270,14 @@ footer .clear {
 }
 
 footer a:focus {
-    color: blue;
+    color: hsl(220, 98%, 61%);
 }
+
+footer a:hover,
+.clear:hover {
+    color: var(--clr-primary);
+}
+
 
 .description {
     position: relative;
@@ -236,7 +288,9 @@ footer a:focus {
 }
 
 .attribution {
-    font-size: 11px;
+    position: relative;
+    bottom: 130px;
+    font-size: 13px;
     text-align: center;
 }
 

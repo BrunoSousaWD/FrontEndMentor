@@ -22,36 +22,23 @@
     <div class="container">
       <div class="title">
         <p>TODO</p>
-        <img src="images/icon-moon.svg" alt="moon turn dark mode on">
+        <img src="images/icon-moon.svg" alt="moon turn dark mode on" id="dark-switch">
       </div>
 
       <div class="todo-input">
-        <input type="checkbox">
-        <input type="text">
+        <input type="checkbox" id="add-input" onclick="addListItem()">
+        <input type="text" maxlength="40" id="input-value">
       </div>
-
+      <p id="error">Invalid input</p>
       <div class="list">
-        <ul>
-          <li><input type="checkbox">
+        <ul id="todo-list">
+          <!-- <li>
+            <input type="checkbox" id="checkbox">
             <div id="delete-item">
               <img src="images/icon-cross.svg" alt="delete item">
             </div>
-          </li>
-          <li><input type="checkbox">
-            <div id="delete-item">
-              <img src="images/icon-cross.svg" alt="delete item">
-            </div>
-          </li>
-          <li><input type="checkbox">
-            <div id="delete-item">
-              <img src="images/icon-cross.svg" alt="delete item">
-            </div>
-          </li>
-          <li><input type="checkbox">
-            <div id="delete-item">
-              <img src="images/icon-cross.svg" alt="delete item">
-            </div>
-          </li>
+          </li> -->
+
 
 
         </ul>
@@ -60,12 +47,12 @@
           <p class="items-left"><span id="items-count">0</span> items left</p>
 
           <div class="nav">
-            <a href="#" active>All</a>
-            <a href="#">Active</a>
-            <a href="#">Completed</a>
+            <a href="#" onclick="showAll()">All</a>
+            <a href="#" onclick="showActive()">Active</a>
+            <a href="#" onclick="showComplete()">Completed</a>
           </div>
 
-          <p class="clear">Clear Completed</p>
+          <p class="clear" onclick="clearCompleted()">Clear Completed</p>
         </footer>
       </div>
 
@@ -83,6 +70,8 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="#">de Sousa</a>.
   </div>
+
+  <script src="app.js"></script>
 </body>
 
 </html>
