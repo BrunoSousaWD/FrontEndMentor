@@ -231,9 +231,8 @@ body {
     align-items: center;
     padding: 20px;
     border-bottom: 1px solid var(--clr-lgb);
+    cursor: move;
 }
-
-
 
 .list ul li img {
     display: none;
@@ -244,6 +243,8 @@ body {
     display: block;
     cursor: pointer;
 }
+
+
 
 footer {
     display: flex;

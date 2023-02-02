@@ -88,6 +88,7 @@ function removeCount() {
 function addListItem() {
     let todoList = document.getElementById("todo-list");
     let li = document.createElement('li');
+    li.setAttribute('draggable', true);
     let inputValue = document.getElementById('input-value').value;
     let text = document.createTextNode(inputValue);
 
@@ -147,6 +148,5 @@ function addListItem() {
 
 
 //missing dark mode
-//missing count
-// check style on link active
+
 //missing drag and drop
