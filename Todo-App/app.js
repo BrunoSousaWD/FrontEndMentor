@@ -6,7 +6,7 @@ let focused = document.getElementById('focus');
 
 
 darkMode.addEventListener('click', function () {
-    alert('psst');
+    alert('psst!!! you still gotta set this up');
 })
 
 
