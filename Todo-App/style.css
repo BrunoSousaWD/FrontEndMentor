@@ -269,8 +269,9 @@ footer .clear {
 
 }
 
-footer a:focus {
+a.selected {
     color: hsl(220, 98%, 61%);
+    outline: none;
 }
 
 footer a:hover,
