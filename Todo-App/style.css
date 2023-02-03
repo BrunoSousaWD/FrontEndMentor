@@ -49,7 +49,7 @@ The designs were created to the following widths:
 
 :root {
     --clr-text: hsl(235, 21%, 11%);
-    --clr-vlg: hsl(0, 0%, 98%);
+    --clr-bg-body: hsl(0, 0%, 98%);
     --clr-vlgb: hsl(236, 33%, 92%);
     --clr-lgb: hsl(233, 11%, 84%);
     --clr-secondary: hsl(236, 9%, 61%);
@@ -61,10 +61,8 @@ The designs were created to the following widths:
     --clr-bg-body: hsl(235, 21%, 11%);
     --clr-main: hsl(235, 24%, 19%);
     --clr-primary: hsl(234, 39%, 85%);
-    --clr-primary-hover: hsl(236, 33%, 92%);
     --clr-border: hsl(234, 11%, 52%);
-    --clr-completed: hsl(233, 14%, 35%);
-    --clr-comp: hsl(237, 14%, 26%);
+    --clr-text: hsl(233, 14%, 35%);
 }
 
 /* Reset */
@@ -113,14 +111,59 @@ a {
 
 /* main */
 body {
-    background: var(--clr-vlg);
+    background: var(--clr-bg-body);
+    color: var(--clr-text);
 }
 
+/* darkmode properties start*/
 
-
-.dark-bg {
+#dark-bg {
     display: none;
 }
+
+#light-switch {
+    display: none;
+}
+
+.list ul li.darkmode {
+    background: var(--clr-main);
+    border-bottom: 1px solid var(--clr-border);
+    color: var(--clr-primary);
+}
+
+.list ul li.darkmode.checked {
+    color: var(--clr-text);
+}
+
+.list.darkmode {
+    background: var(--clr-main);
+    color: var(--clr-primary);
+}
+
+.todo-input.darkmode {
+    background: var(--clr-main);
+    color: var(--clr-primary);
+}
+
+.todo-input.darkmode input[type='checkbox'],
+.list ul li.darkmode input[type='checkbox'] {
+    border: 1px solid var(--clr-border);
+}
+
+.list ul li.darkmode input[type='checkbox']:hover:not(:checked) {
+    background: linear-gradient(var(--clr-main), var(--clr-main)) padding-box,
+        linear-gradient(150deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%)) border-box;
+    border-radius: 50%;
+    border: 1px solid transparent;
+}
+
+footer.darkmode {
+    background: var(--clr-main);
+}
+
+
+
+/*.darkmode properties ends */
 
 
 .checked {
@@ -162,21 +205,29 @@ body {
     margin-bottom: 1.5em;
 }
 
+
 .todo-input input[type='text'] {
     width: 90%;
     border: none;
     outline: none;
+    background: inherit;
+    color: inherit;
+}
+
+.todo-input input[type='text']::placeholder {
+    font-size: .95rem;
 }
 
 .todo-input input[type='checkbox'],
 .list ul li input[type='checkbox'] {
     appearance: none;
-    width: 25px;
-    height: 25px;
+    width: 22px;
+    height: 22px;
     border: 1px solid var(--clr-vlgb);
     border-radius: 50%;
     cursor: pointer;
 }
+
 
 .todo-input input[type='checkbox']:hover,
 .list ul li input[type='checkbox']:checked {
@@ -196,17 +247,18 @@ body {
     background-image: url('images/icon-check.svg');
     background-repeat: no-repeat;
     background-position: center;
-    width: 25px;
-    height: 25px;
+    width: 22px;
+    height: 22px;
 }
 
-/* .todo-input input[type='checkbox']:hover:not(:checked), */
+
 .list ul li input[type='checkbox']:hover:not(:checked) {
     background: linear-gradient(white, white) padding-box,
         linear-gradient(150deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%)) border-box;
     border-radius: 50%;
     border: 1px solid transparent;
 }
+
 
 #error {
     display: none;
@@ -231,7 +283,7 @@ body {
     align-items: center;
     padding: 20px;
     border-bottom: 1px solid var(--clr-lgb);
-    cursor: move;
+    cursor: pointer;
 }
 
 .list ul li img {
@@ -239,11 +291,11 @@ body {
     float: right;
 }
 
+
 .list ul li:hover img {
     display: block;
     cursor: pointer;
 }
-
 
 
 footer {
@@ -252,6 +304,7 @@ footer {
     font-size: .75rem;
     padding: 20px;
 }
+
 
 footer p {
     color: var(--clr-secondary);
@@ -283,7 +336,7 @@ footer a:hover,
 
 .description {
     position: relative;
-    bottom: 150px;
+    bottom: 170px;
     font-size: .8rem;
     color: var(--clr-secondary);
     text-align: center;

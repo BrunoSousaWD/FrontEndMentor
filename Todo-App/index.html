@@ -14,8 +14,8 @@
 
 <body>
   <header>
-    <img src="images/bg-desktop-light.jpg" class="light-bg" alt="mountains">
-    <img src="images/bg-desktop-dark.jpg" class="dark-bg" alt="">
+    <img src="images/bg-desktop-light.jpg" id="light-bg" alt="mountains">
+    <img src="images/bg-desktop-dark.jpg" id="dark-bg" alt="">
   </header>
 
   <main>
@@ -23,11 +23,12 @@
       <div class="title">
         <p>TODO</p>
         <img src="images/icon-moon.svg" alt="moon turn dark mode on" id="dark-switch">
+        <img src="images/icon-sun.svg" alt="sun turn light mode on" id="light-switch">
       </div>
 
-      <div class="todo-input">
+      <div class="todo-input" id="todo-input">
         <input type="checkbox" id="add-input" onclick="addListItem()">
-        <input type="text" maxlength="40" id="input-value">
+        <input type="text" maxlength="40" id="input-value" placeholder="Create a new todo...">
       </div>
       <p id="error">Invalid input</p>
       <div class="list">

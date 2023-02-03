@@ -1,13 +1,7 @@
 let darkMode = document.getElementById("dark-switch");
+let lightMode = document.getElementById("light-switch");
 let focused = document.getElementById('focus');
 
-
-
-
-
-darkMode.addEventListener('click', function () {
-    alert('psst!!! you still gotta set this up');
-})
 
 
 
@@ -28,9 +22,6 @@ if (active) {
         })
     }
 }
-
-
-
 
 
 //show All
@@ -141,10 +132,43 @@ function addListItem() {
         removeCount();
     }
 
-
 }
 
 
+
+darkMode.addEventListener('click', function () {
+    document.body.classList.add('darkmode');
+    document.getElementById('light-bg').style.display = 'none';
+    document.getElementById('dark-bg').style.display = 'block';
+    document.getElementById('dark-switch').style.display = 'none';
+    document.getElementById('light-switch').style.display = 'block';
+
+    document.getElementById('todo-input').classList.add('darkmode');
+    document.getElementById('add-input').classList.add('darkmode');
+
+    let li = document.getElementById("todo-list").getElementsByTagName("li");
+    for (let i = 0; i < li.length; i++)
+        li[i].classList.add('darkmode');
+
+
+
+    document.querySelector('footer').classList.add('darkmode');
+})
+
+
+lightMode.addEventListener('click', function () {
+    document.body.classList.remove('darkmode');
+    document.getElementById('light-bg').style.display = 'block';
+    document.getElementById('dark-bg').style.display = 'none';
+    document.getElementById('dark-switch').style.display = 'block';
+    document.getElementById('light-switch').style.display = 'none';
+
+    document.getElementById('todo-input').classList.remove('darkmode');
+    document.getElementById('add-input').classList.remove('darkmode');
+
+
+    document.querySelector('footer').classList.remove('darkmode');
+})
 
 
 //missing dark mode
