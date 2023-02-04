@@ -123,9 +123,10 @@ function addListItem() {
     checkbox.addEventListener('click', function () {
         let div = this.parentElement;
 
-        if (div.classList != 'checked') {
+        if (!div.classList.contains('checked')) {
             div.classList.add('checked');
             removeCount();
+
         } else {
             div.classList.remove('checked');
             addCount();
