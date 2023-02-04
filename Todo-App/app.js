@@ -80,6 +80,10 @@ function addListItem() {
     let todoList = document.getElementById("todo-list");
     let li = document.createElement('li');
     li.setAttribute('draggable', true);
+
+
+
+
     let inputValue = document.getElementById('input-value').value;
     let text = document.createTextNode(inputValue);
 
@@ -102,6 +106,9 @@ function addListItem() {
         error.style.display = 'block';
     } else {
         error.style.display = 'none';
+        if (document.body.classList == 'darkmode') {
+            li.classList.add('darkmode');
+        }
         li.appendChild(checkbox);
         li.appendChild(text);
         li.appendChild(close);
@@ -113,8 +120,9 @@ function addListItem() {
 
 
     //complete
-    checkbox.onclick = function () {
+    checkbox.addEventListener('click', function () {
         let div = this.parentElement;
+
         if (div.classList != 'checked') {
             div.classList.add('checked');
             removeCount();
@@ -122,8 +130,10 @@ function addListItem() {
             div.classList.remove('checked');
             addCount();
         }
+    })
 
-    }
+
+
 
     //clear item
     close.onclick = function () {
@@ -146,9 +156,11 @@ darkMode.addEventListener('click', function () {
     document.getElementById('todo-input').classList.add('darkmode');
     document.getElementById('add-input').classList.add('darkmode');
 
-    let li = document.getElementById("todo-list").getElementsByTagName("li");
-    for (let i = 0; i < li.length; i++)
+    let li = document.getElementsByTagName("li");
+    for (let i = 0; i < li.length; i++) {
         li[i].classList.add('darkmode');
+    }
+
 
 
 
@@ -166,6 +178,9 @@ lightMode.addEventListener('click', function () {
     document.getElementById('todo-input').classList.remove('darkmode');
     document.getElementById('add-input').classList.remove('darkmode');
 
+    let li = document.getElementsByTagName("li");
+    for (let i = 0; i < li.length; i++)
+        li[i].classList.remove('darkmode');
 
     document.querySelector('footer').classList.remove('darkmode');
 })
