@@ -81,12 +81,8 @@ function addListItem() {
     let li = document.createElement('li');
     li.setAttribute('draggable', true);
 
-
-
-
     let inputValue = document.getElementById('input-value').value;
     let text = document.createTextNode(inputValue);
-
 
     //set checkbox
     let checkbox = document.createElement('input');
@@ -97,8 +93,6 @@ function addListItem() {
     let img = document.createElement('img');
     img.setAttribute("src", "images/icon-cross.svg");
     close.appendChild(img);
-
-
 
     // add item
     if (inputValue === '') {
@@ -117,8 +111,6 @@ function addListItem() {
         addCount();
     }
 
-
-
     //complete
     checkbox.addEventListener('click', function () {
         let div = this.parentElement;
@@ -133,16 +125,12 @@ function addListItem() {
         }
     })
 
-
-
-
     //clear item
     close.onclick = function () {
         var listItem = this.parentElement;
         listItem.remove();
         removeCount();
     }
-
 }
 
 
@@ -161,9 +149,6 @@ darkMode.addEventListener('click', function () {
     for (let i = 0; i < li.length; i++) {
         li[i].classList.add('darkmode');
     }
-
-
-
 
     document.querySelector('footer').classList.add('darkmode');
 })
@@ -187,6 +172,5 @@ lightMode.addEventListener('click', function () {
 })
 
 
-//missing dark mode
 
 //missing drag and drop
