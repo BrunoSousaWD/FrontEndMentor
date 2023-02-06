@@ -1,7 +1,3 @@
-let darkMode = document.getElementById("dark-switch");
-let lightMode = document.getElementById("light-switch");
-let focused = document.getElementById('focus');
-
 
 
 
@@ -139,8 +135,8 @@ function addListItem() {
     let dragStartIndex;
     li.addEventListener('dragstart', () => {
 
-        dragStartIndex = li.closestElement('li').getAttribute('data-index');
-        console.log(dragStartIndex);
+        // dragStartIndex = li.closestElement('li').getAttribute('data-index');
+        // console.log(dragStartIndex);
 
     });
     li.addEventListener('dragenter', () => {
@@ -154,12 +150,12 @@ function addListItem() {
 
     li.addEventListener('drop', () => {
         li.classList.remove('dragging');
+        todoList.appendChild(li)
         // console.log('dropped')
     })
 
     li.addEventListener('dragover', e => {
         e.preventDefault();
-        // todoList.appendChild(draggable);
         console.log('draggingOver');
     })
 
@@ -170,9 +166,8 @@ function addListItem() {
 
 
 
-
-
-
+let darkMode = document.getElementById("dark-switch");
+let lightMode = document.getElementById("light-switch");
 
 
 
