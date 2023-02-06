@@ -80,6 +80,7 @@ function addListItem() {
     let todoList = document.getElementById("todo-list");
     let li = document.createElement('li');
     li.setAttribute('draggable', true);
+    li.classList.add('draggable');
 
     let inputValue = document.getElementById('input-value').value;
     let text = document.createTextNode(inputValue);
@@ -131,10 +132,52 @@ function addListItem() {
         listItem.remove();
         removeCount();
     }
+
+
+    //drag and drop
+    //draggable
+    let dragStartIndex;
+    li.addEventListener('dragstart', () => {
+
+        dragStartIndex = li.closestElement('li').getAttribute('data-index');
+        console.log(dragStartIndex);
+
+    });
+    li.addEventListener('dragenter', () => {
+        li.classList.add('dragging');
+        // console.log('dragEnter')
+    })
+    li.addEventListener('dragleave', () => {
+        li.classList.remove('dragging');
+        // console.log('dragLeave')
+    })
+
+    li.addEventListener('drop', () => {
+        li.classList.remove('dragging');
+        // console.log('dropped')
+    })
+
+    li.addEventListener('dragover', e => {
+        e.preventDefault();
+        // todoList.appendChild(draggable);
+        console.log('draggingOver');
+    })
+
+
+
+
 }
 
 
 
+
+
+
+
+
+
+
+//darkmode turn on
 darkMode.addEventListener('click', function () {
     document.body.classList.add('darkmode');
     document.getElementById('light-bg').style.display = 'none';
@@ -153,7 +196,7 @@ darkMode.addEventListener('click', function () {
     document.querySelector('footer').classList.add('darkmode');
 })
 
-
+//light mode turn on
 lightMode.addEventListener('click', function () {
     document.body.classList.remove('darkmode');
     document.getElementById('light-bg').style.display = 'block';
@@ -171,6 +214,12 @@ lightMode.addEventListener('click', function () {
     document.querySelector('footer').classList.remove('darkmode');
 })
 
+//drag and drop
+// const draggables = document.querySelectorAll('.draggable');
+// const dropable = document.getElementById('todo-list');
 
-
-//missing drag and drop
+// draggables.forEach(draggable => {
+//     draggable.addEventListener('dragstart', () => {
+//         console.log('jssss');
+//     })
+// })

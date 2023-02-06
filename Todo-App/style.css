@@ -342,6 +342,11 @@ footer a:hover,
     text-align: center;
 }
 
+
+.dragging {
+    background: rgba(128, 128, 128, 0.518);
+}
+
 .attribution {
     position: relative;
     bottom: 130px;
