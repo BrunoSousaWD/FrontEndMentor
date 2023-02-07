@@ -107,6 +107,12 @@ function addListItem() {
         document.getElementById("input-value").value = "";
         addCount();
     }
+    // assign a position to each li
+    let item = document.querySelectorAll('li');
+
+    for (let k = 0; k < item.length; k++) {
+        item[k].setAttribute('list-pos', k);
+    }
 
     //complete
     checkbox.addEventListener('click', function () {
@@ -132,14 +138,14 @@ function addListItem() {
 
     //drag and drop
     //draggable
-    let dragStartIndex;
+    let initialPosition;
+
     li.addEventListener('dragstart', () => {
-
-        // dragStartIndex = li.closestElement('li').getAttribute('data-index');
-        // console.log(dragStartIndex);
-
+        initialPosition = li.getAttribute('list-pos');
+        console.log(initialPosition)
     });
-    li.addEventListener('dragenter', () => {
+    li.addEventListener('dragenter', (e) => {
+        e.preventDefault();
         li.classList.add('dragging');
         // console.log('dragEnter')
     })
@@ -148,22 +154,22 @@ function addListItem() {
         // console.log('dragLeave')
     })
 
-    li.addEventListener('drop', () => {
+    li.addEventListener('drop', e => {
+        e.preventDefault();
         li.classList.remove('dragging');
-        todoList.appendChild(li)
-        // console.log('dropped')
+        let finalPosition = li.getAttribute('list-pos');
+
+        todoList.appendChild(li);
+        console.log(finalPosition)
+
     })
 
     li.addEventListener('dragover', e => {
         e.preventDefault();
-        console.log('draggingOver');
     })
 
 
-
-
 }
-
 
 
 let darkMode = document.getElementById("dark-switch");
