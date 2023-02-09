@@ -115,31 +115,12 @@ function addListItem() {
     }
 
     //complete
-    checkbox.addEventListener('click', function () {
-        let div = this.parentElement;
-
-        if (!div.classList.contains('checked')) {
-            div.classList.add('checked');
-            removeCount();
-
-        } else {
-            div.classList.remove('checked');
-            addCount();
-        }
-    })
-
+    complete(checkbox);
     //clear item
-    close.onclick = function () {
-        var listItem = this.parentElement;
-        listItem.remove();
-        removeCount();
-    }
-
+    deleteItem(close);
 
     //drag and drop
-    //draggable
     let initialPosition;
-
     li.addEventListener('dragstart', () => {
         initialPosition = li.getAttribute('list-pos');
         console.log(initialPosition)
@@ -168,15 +149,40 @@ function addListItem() {
         e.preventDefault();
     })
 
-
 }
 
+//complete
+function complete(box) {
+    box.addEventListener('click', function () {
+        let div = this.parentElement;
 
+        if (!div.classList.contains('checked')) {
+            div.classList.add('checked');
+            removeCount();
+
+        } else {
+            div.classList.remove('checked');
+            addCount();
+        }
+    })
+}
+
+//delete item
+function deleteItem(close) {
+    close.onclick = function () {
+        var listItem = this.parentElement;
+        listItem.remove();
+
+        let div = this.parentElement;
+        if (!div.classList.contains('checked')) {
+            removeCount();
+        }
+    }
+}
+
+//Darkmode
 let darkMode = document.getElementById("dark-switch");
 let lightMode = document.getElementById("light-switch");
-
-
-
 
 //darkmode turn on
 darkMode.addEventListener('click', function () {
@@ -215,12 +221,3 @@ lightMode.addEventListener('click', function () {
     document.querySelector('footer').classList.remove('darkmode');
 })
 
-//drag and drop
-// const draggables = document.querySelectorAll('.draggable');
-// const dropable = document.getElementById('todo-list');
-
-// draggables.forEach(draggable => {
-//     draggable.addEventListener('dragstart', () => {
-//         console.log('jssss');
-//     })
-// })
