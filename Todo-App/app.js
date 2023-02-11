@@ -144,7 +144,6 @@ function dragDrop() {
     this.classList.remove('dragging');
 
     const dropPosition = this.getAttribute('list-pos');
-    console.log(dropPosition);
 
     swapItem(innitialPosition, dropPosition);
 }
