@@ -62,7 +62,6 @@ function clearCompleted() {
 let count = 0;
 function addCount() {
     count += 1;
-
     document.getElementById('items-count').innerHTML = count;
 }
 //remove count
@@ -71,10 +70,14 @@ function removeCount() {
     document.getElementById('items-count').innerHTML = count;
 }
 
+
 //append to list
+const listItems = [];
+let innitialPosition;
+
 function addListItem() {
     let todoList = document.getElementById("todo-list");
-    let li = document.createElement('li');
+    const li = document.createElement('li');
     li.setAttribute('draggable', true);
     li.classList.add('draggable');
 
@@ -84,7 +87,6 @@ function addListItem() {
     //set checkbox
     let checkbox = document.createElement('input');
     checkbox.setAttribute('type', 'checkbox');
-
     // set close div
     let close = document.createElement('div');
     let img = document.createElement('img');
@@ -103,6 +105,7 @@ function addListItem() {
         li.appendChild(checkbox);
         li.appendChild(text);
         li.appendChild(close);
+        listItems.push(li);
         todoList.appendChild(li);
         document.getElementById("input-value").value = "";
         addCount();
@@ -120,35 +123,55 @@ function addListItem() {
     deleteItem(close);
 
     //drag and drop
-    let initialPosition;
-    li.addEventListener('dragstart', () => {
-        initialPosition = li.getAttribute('list-pos');
-        console.log(initialPosition)
-    });
-    li.addEventListener('dragenter', (e) => {
-        e.preventDefault();
-        li.classList.add('dragging');
-        // console.log('dragEnter')
+    dragAndDrop();
+}
+
+function dragStart() {
+    innitialPosition = this.getAttribute('list-pos');
+}
+function dragEnter() {
+    this.classList.add('dragging');
+
+}
+function dragLeave() {
+    this.classList.remove('dragging');
+
+}
+function dragOver(e) {
+    e.preventDefault();
+}
+function dragDrop() {
+    this.classList.remove('dragging');
+
+    const dropPosition = this.getAttribute('list-pos');
+    console.log(dropPosition);
+
+    swapItem(innitialPosition, dropPosition);
+}
+
+function swapItem(startPos, dropPos) {
+    //save the dropItem
+    const dropItem = listItems[dropPos].innerHTML;
+
+    //swap the drop item with the drag item
+    listItems[dropPos].innerHTML = listItems[startPos].innerHTML;
+    listItems[startPos].innerHTML = dropItem;
+}
+
+function dragAndDrop() {
+    const draggables = document.querySelectorAll('.draggable');
+    const container = document.querySelectorAll('.draggable-list li');
+
+    draggables.forEach(draggable => {
+        draggable.addEventListener('dragstart', dragStart);
     })
-    li.addEventListener('dragleave', () => {
-        li.classList.remove('dragging');
-        // console.log('dragLeave')
+
+    container.forEach(item => {
+        item.addEventListener('dragover', dragOver);
+        item.addEventListener('drop', dragDrop);
+        item.addEventListener('dragenter', dragEnter);
+        item.addEventListener('dragleave', dragLeave);
     })
-
-    li.addEventListener('drop', e => {
-        e.preventDefault();
-        li.classList.remove('dragging');
-        let finalPosition = li.getAttribute('list-pos');
-
-        todoList.appendChild(li);
-        console.log(finalPosition)
-
-    })
-
-    li.addEventListener('dragover', e => {
-        e.preventDefault();
-    })
-
 }
 
 //complete
