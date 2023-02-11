@@ -131,6 +131,10 @@ body {
     color: var(--clr-primary);
 }
 
+.list ul li.darkmode.dragging {
+    background: var(--clr-bg-body);
+}
+
 .list ul li.darkmode.checked {
     color: var(--clr-text);
 }
@@ -345,6 +349,10 @@ footer a:hover,
 
 .dragging {
     background: rgba(128, 128, 128, 0.518);
+}
+
+.over {
+    padding-bottom: 20px;
 }
 
 .attribution {

@@ -126,16 +126,15 @@ function addListItem() {
     dragAndDrop();
 }
 
+//dragAndDrop
 function dragStart() {
     innitialPosition = this.getAttribute('list-pos');
 }
 function dragEnter() {
     this.classList.add('dragging');
-
 }
 function dragLeave() {
     this.classList.remove('dragging');
-
 }
 function dragOver(e) {
     e.preventDefault();
@@ -147,7 +146,7 @@ function dragDrop() {
 
     swapItem(innitialPosition, dropPosition);
 }
-
+//swap listItems
 function swapItem(startPos, dropPos) {
     //save the dropItem
     const dropItem = listItems[dropPos].innerHTML;
