@@ -14,8 +14,14 @@
 
 <body>
   <header>
-    <img src="images/bg-desktop-light.jpg" id="light-bg" alt="mountains">
-    <img src="images/bg-desktop-dark.jpg" id="dark-bg" alt="">
+    <picture>
+      <source srcset="images/bg-mobile-light.jpg" id="light-bg" media="(max-width:600px)">
+      <img src="images/bg-desktop-light.jpg" id="light-bg" alt="mountains">
+      <source srcset="images/bg-mobile-dark.jpg" id="light-bg" media="(max-width:600px)">
+      <img src="images/bg-desktop-dark.jpg" id="dark-bg" alt="">
+    </picture>
+
+
   </header>
 
   <main>
@@ -31,7 +37,7 @@
         <input type="text" maxlength="40" id="input-value" placeholder="Create a new todo...">
       </div>
       <p id="error">Invalid input</p>
-      <div class="list">
+      <div class="list" id="list">
         <ul id="todo-list" class="draggable-list">
 
         </ul>
@@ -48,10 +54,14 @@
           <p class="clear" onclick="clearCompleted()">Clear Completed</p>
         </footer>
       </div>
-
-
-
+      <div class="footer-nav-mobile" id="mobile-footer-nav">
+        <a href="#" onclick="showAll()" class="selected">All</a>
+        <a href="#" onclick="showActive()">Active</a>
+        <a href="#" onclick="showComplete()">Completed</a>
+      </div>
     </div>
+
+
 
     <p class="description">Drag and drop to reorder list</p>
   </main>

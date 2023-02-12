@@ -351,8 +351,8 @@ footer a:hover,
     background: rgba(128, 128, 128, 0.518);
 }
 
-.over {
-    padding-bottom: 20px;
+.footer-nav-mobile {
+    display: none;
 }
 
 .attribution {
@@ -364,4 +364,87 @@ footer a:hover,
 
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+@media (max-width:400px) {
+    .container {
+        max-width: 90%;
+        bottom: 160px;
+    }
+
+    .title {
+        margin-bottom: 1.75em;
+    }
+
+    .title p {
+        font-size: 1.6rem;
+    }
+
+    .title img {
+        max-width: 7%;
+    }
+
+    .todo-input {
+        margin-bottom: 1em;
+        font-size: .85rem;
+    }
+
+    .todo-input input[type='text']::placeholder {
+        font-size: .8rem;
+        color: var(--clr-secondary);
+    }
+
+    #error {
+        font-size: .75rem;
+        bottom: 14px;
+    }
+
+    .list ul li {
+        gap: 1em;
+        font-size: .85rem;
+    }
+
+    .list ul li img {
+        display: block;
+        max-width: 60%;
+    }
+
+    .todo-input,
+    .list ul li {
+        padding: 15px;
+    }
+
+    footer {
+        padding: 18px;
+        font-size: .65rem;
+    }
+
+    footer .nav {
+        display: none;
+    }
+
+    .footer-nav-mobile {
+        display: flex;
+        justify-content: center;
+        gap: 1em;
+        margin-top: 1em;
+        padding: 18px;
+        border-radius: 5px;
+        background: white;
+        font-size: .8rem;
+        font-weight: 700;
+        color: var(--clr-secondary);
+        margin-bottom: 4em;
+
+    }
+
+    .footer-nav-mobile.darkmode {
+        background: var(--clr-main);
+    }
+
+    .list.darkmode {
+        background: none;
+    }
+
+
 }

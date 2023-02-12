@@ -215,6 +215,9 @@ darkMode.addEventListener('click', function () {
 
     document.getElementById('todo-input').classList.add('darkmode');
     document.getElementById('add-input').classList.add('darkmode');
+    document.getElementById('mobile-footer-nav').classList.add('darkmode');
+    document.getElementById('list').classList.add('darkmode');
+
 
     let li = document.getElementsByTagName("li");
     for (let i = 0; i < li.length; i++) {
@@ -234,6 +237,9 @@ lightMode.addEventListener('click', function () {
 
     document.getElementById('todo-input').classList.remove('darkmode');
     document.getElementById('add-input').classList.remove('darkmode');
+    document.getElementById('mobile-footer-nav').classList.remove('darkmode');
+    document.getElementById('list').classList.remove('darkmode');
+
 
     let li = document.getElementsByTagName("li");
     for (let i = 0; i < li.length; i++)
