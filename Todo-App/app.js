@@ -1,6 +1,3 @@
-
-
-
 // switch active links
 let active = document.getElementById('nav');
 if (active) {
@@ -209,7 +206,9 @@ let lightMode = document.getElementById("light-switch");
 darkMode.addEventListener('click', function () {
     document.body.classList.add('darkmode');
     document.getElementById('light-bg').style.display = 'none';
+
     document.getElementById('dark-bg').style.display = 'block';
+
     document.getElementById('dark-switch').style.display = 'none';
     document.getElementById('light-switch').style.display = 'block';
 
@@ -231,6 +230,7 @@ darkMode.addEventListener('click', function () {
 lightMode.addEventListener('click', function () {
     document.body.classList.remove('darkmode');
     document.getElementById('light-bg').style.display = 'block';
+
     document.getElementById('dark-bg').style.display = 'none';
     document.getElementById('dark-switch').style.display = 'block';
     document.getElementById('light-switch').style.display = 'none';
@@ -239,7 +239,6 @@ lightMode.addEventListener('click', function () {
     document.getElementById('add-input').classList.remove('darkmode');
     document.getElementById('mobile-footer-nav').classList.remove('darkmode');
     document.getElementById('list').classList.remove('darkmode');
-
 
     let li = document.getElementsByTagName("li");
     for (let i = 0; i < li.length; i++)

@@ -131,6 +131,13 @@ body {
     color: var(--clr-primary);
 }
 
+
+.list ul li.darkmode:nth-child(1) {
+    border: 1px solid transparent;
+    border-radius: 5px 5px 0 0;
+    border-bottom: 1px solid var(--clr-border);
+}
+
 .list ul li.darkmode.dragging {
     background: var(--clr-bg-body);
 }
@@ -142,6 +149,8 @@ body {
 .list.darkmode {
     background: var(--clr-main);
     color: var(--clr-primary);
+    border: 1px solid transparent;
+
 }
 
 .todo-input.darkmode {
@@ -163,6 +172,8 @@ body {
 
 footer.darkmode {
     background: var(--clr-main);
+    border: 0px solid transparent;
+    border-radius: 0 0 5px 5px;
 }
 
 
@@ -369,7 +380,7 @@ footer a:hover,
 @media (max-width:400px) {
     .container {
         max-width: 90%;
-        bottom: 160px;
+        bottom: 155px;
     }
 
     .title {

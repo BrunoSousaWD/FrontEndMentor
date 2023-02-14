@@ -15,9 +15,11 @@
 <body>
   <header>
     <picture>
-      <source srcset="images/bg-mobile-light.jpg" id="light-bg" media="(max-width:600px)">
+      <source srcset="images/bg-mobile-light.jpg" id="light-bg-mb" media="(max-width:400px)">
       <img src="images/bg-desktop-light.jpg" id="light-bg" alt="mountains">
-      <source srcset="images/bg-mobile-dark.jpg" id="light-bg" media="(max-width:600px)">
+    </picture>
+    <picture>
+      <source srcset="images/bg-mobile-dark.jpg" id="dark-bg-mb" media="(max-width:400px)">
       <img src="images/bg-desktop-dark.jpg" id="dark-bg" alt="">
     </picture>
 
@@ -39,7 +41,6 @@
       <p id="error">Invalid input</p>
       <div class="list" id="list">
         <ul id="todo-list" class="draggable-list">
-
         </ul>
 
         <footer>
@@ -61,13 +62,8 @@
       </div>
     </div>
 
-
-
     <p class="description">Drag and drop to reorder list</p>
   </main>
-
-
-
 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
