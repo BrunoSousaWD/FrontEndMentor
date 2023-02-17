@@ -16,6 +16,17 @@
 */
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
 
+
+:root {
+    --clr-soft-blue: hsl(231, 69%, 60%);
+    --clr-soft-red: hsl(0, 94%, 66%);
+
+    --clr-primary: hsl(229, 31%, 21%);
+    --clr-secondary: hsl(229, 8%, 60%);
+
+    --clr-border: hsla(229, 8%, 60%, 0.391);
+}
+
 /* RESET */
 *,
 *::before,
@@ -42,6 +53,7 @@ body {
     font-family: 'Rubik', sans-serif;
     max-width: 1440px;
     margin: 0 auto;
+
 }
 
 
@@ -68,6 +80,24 @@ a {
     margin: 0 auto;
 }
 
+
+.section-title {
+    font-size: 1.85rem;
+    font-weight: 500;
+    text-align: center;
+    color: var(--clr-primary);
+    margin-bottom: .85em;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--clr-secondary);
+    max-width: 50%;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* Header */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -77,28 +107,40 @@ a {
 
 .navbar ul {
     display: flex;
-    gap: 2em;
+    gap: 2.2em;
     text-transform: uppercase;
     margin-right: 6em;
 }
 
 .navbar ul li a {
-    font-size: .85rem;
+    font-size: .7rem;
+    font-weight: 500;
+    letter-spacing: .2ch;
     cursor: pointer;
+}
+
+.navbar ul li a:hover {
+    color: var(--clr-soft-red);
 }
 
 .red-btn {
     color: white;
-    background: red;
-    padding: 10px 35px;
+    background: var(--clr-soft-red);
+    padding: 10px 30px;
     border-radius: 5px;
+    border: 2px solid transparent;
 }
 
+.red-btn:hover {
+    color: var(--clr-soft-red);
+    border: 2px solid var(--clr-soft-red);
+    background: white;
+}
 
 .hero {
+    position: relative;
     display: flex;
-    margin-top: 4em;
-    gap: 5em;
+    margin-top: 6em;
     justify-content: space-between;
     align-items: center;
 }
@@ -107,15 +149,144 @@ a {
     max-width: 40%;
 }
 
-.hero .right {
-    width: 50%;
+.hero-btn {
+    margin-top: 2em;
+}
+
+.hero-btn .chrome-btn {
+    padding: 13px 20px;
+    border: 2px solid transparent;
+    color: white;
+    font-size: .8rem;
+    font-weight: 500;
+    background: var(--clr-soft-blue);
+    border-radius: 5px;
+}
+
+.hero-btn .chrome-btn:hover {
+    color: var(--clr-soft-blue);
+    background: white;
+    border: 2px solid var(--clr-soft-blue);
+}
+
+.hero-btn .firefox-btn {
+    padding: 13px 20px;
+    border: 2px solid transparent;
+    color: var(--clr-primary);
+    background: hsla(229, 8%, 60%, 0.127);
+    font-size: .8rem;
+    font-weight: 500;
+    border-radius: 5px;
+    margin-left: 1em;
+}
+
+.hero-btn .firefox-btn:hover {
+    color: var(--clr-primary);
+    background: white;
+    border: 2px solid var(--clr-primary);
+}
+
+.hero img {
+    position: relative;
+    z-index: 99;
+    left: 30px;
+}
+
+.shape-right {
+    width: 500px;
+    height: 340px;
+    background: var(--clr-soft-blue);
+    border-radius: 0 0 0 150px;
+
+    position: absolute;
+    right: -71px;
+    bottom: -20px;
+
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 2.7rem;
     font-weight: 500;
+    color: var(--clr-primary);
 }
 
+.hero .left p {
+    color: var(--clr-secondary);
+    font-size: 1rem;
+    margin-top: 1.5em;
+    line-height: 1.5;
+}
+
+/* Features */
+#features {
+    margin-top: 6em;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--clr-primary);
+
+
+    margin-top: 3em;
+    margin-bottom: 4em;
+}
+
+#bookmarking,
+#searching,
+#sharing {
+    font-size: .95rem;
+    font-weight: 500;
+    opacity: .7;
+    padding: 30px 60px;
+    border-bottom: 1px solid var(--clr-border);
+}
+
+#bookmarking:hover,
+#searching:hover,
+#sharing:hover {
+    cursor: pointer;
+    color: var(--clr-soft-red);
+}
+
+#bookmarking.active,
+#searching.active,
+#sharing.active {
+    opacity: 1;
+    padding-block: 28px;
+    border-bottom: 4px solid var(--clr-soft-red);
+}
+
+
+.tab {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+
+mg {
+    max-width: 250%;
+}
+
+.tab-right {
+    max-width: 38%;
+}
+
+.left img {
+    width: 100%;
+}
+
+.tab-right .section-title {
+    text-align: left;
+}
+
+.tab-right .section-subtitle {
+    max-width: 100%;
+    text-align: left;
+}
 
 /* Attribution */
 .attribution {

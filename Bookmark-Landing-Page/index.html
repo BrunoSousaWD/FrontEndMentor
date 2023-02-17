@@ -34,68 +34,65 @@
           <h1>A Simple Bookmark Manager</h1>
           <p>A clean and simple interface to organize your favourite websites. Open a new
             browser tab and see your sites load instantly. Try it for free.</p>
-          <div>
+          <div class="hero-btn">
             <a href="#" class="chrome-btn">Get it on Chrome</a>
             <a href="#" class="firefox-btn">Get it on Firefox</a>
           </div>
         </div>
-        <!-- <div class="right"> -->
         <img src="images/illustration-hero.svg" alt="">
-        <!-- </div> -->
+        <div class="shape-right"></div>
       </div>
     </header>
 
     <main>
 
-      <section class="features">
-        <h2>Features</h2>
-        <p> Our aim is to make it quick and easy for you to access your favourite websites.
+      <section id="features">
+        <h2 class="section-title">Features</h2>
+        <p class="section-subtitle"> Our aim is to make it quick and easy for you to access your favourite websites.
           Your bookmarks sync between your devices so you can access them on the go.</p>
 
         <div class="tabs">
-          <p id="bookmarking">Simple Bookmarking</p>
+          <p id="bookmarking" class="active">Simple Bookmarking</p>
           <p id="searching">Speedy Searching</p>
           <p id="sharing">Easy Sharing</p>
+        </div>
+        <div id="bookmark" class="tab">
 
-          <div class="bookmark">
-            <div class="bookmark-left">
-              <img src="images/illustration-features-tab-1.svg" alt="">
-            </div>
-            <div class="bookmark-right">
-              <h2>Bookmark in one click</h2>
-              <p>Organize your bookmarks however you like. Our simple drag-and-drop interface
-                gives you complete control over how you manage your favourite sites.</p>
-              <button type="button" class="more-info">More Info</button>
-            </div>
-          </div>
-          <div class="search">
-            <div class="search-left">
-              <img src="images/illustration-features-tab-2.svg" alt="">
-            </div>
-            <div class="search-right">
-              <h2>Intelligent search</h2>
-              <p>Our powerful search feature will help you find saved sites in no time at all.
-                No need to trawl through all of your bookmarks.</p>
-              <button type="button" class="more-info">More Info</button>
-            </div>
-          </div>
-          <div class="share">
-            <div class="share-left">
-              <img src="images/illustration-features-tab-3.svg" alt="">
-            </div>
-            <div class="share-right">
-              <h2> Share your bookmarks</h2>
-              <p>Easily share your bookmarks and collections with others. Create a shareable
-                link that you can send at the click of a button.</p>
-              <button type="button" class="more-info">More Info</button>
-            </div>
+          <img class="tab-img" src="images/illustration-features-tab-1.svg" alt="">
+
+
+          <div class="tab-right">
+            <h2 class="section-title">Bookmark in one click</h2>
+            <p class="section-subtitle">Organize your bookmarks however you like. Our simple drag-and-drop interface
+              gives you complete control over how you manage your favourite sites.</p>
+            <button type="button" class="more-info">More Info</button>
           </div>
         </div>
+        <div id="search" class="tab">
+
+          <img src="images/illustration-features-tab-2.svg" alt="">
+          <div class="tab-right">
+            <h2 class="section-title">Intelligent search</h2>
+            <p class="section-subtitle">Our powerful search feature will help you find saved sites in no time at all.
+              No need to trawl through all of your bookmarks.</p>
+            <button type="button" class="more-info">More Info</button>
+          </div>
+        </div>
+        <div id="share" class="tab">
+          <img src="images/illustration-features-tab-3.svg" alt="">
+          <div class="tab-right">
+            <h2 class="section-title"> Share your bookmarks</h2>
+            <p class="section-subtitle">Easily share your bookmarks and collections with others. Create a shareable
+              link that you can send at the click of a button.</p>
+            <button type="button" class="more-info">More Info</button>
+          </div>
+        </div>
+
       </section>
 
       <section id="download">
-        <h2>Download the extension</h2>
-        <p>We’ve got more browsers in the pipeline. Please do let us know if you’ve
+        <h2 class="section-title">Download the extension</h2>
+        <p class="section--subtitle">We’ve got more browsers in the pipeline. Please do let us know if you’ve
           got a favourite you’d like us to prioritize.</p>
 
         <div class="cards">
@@ -130,8 +127,8 @@
       </section>
 
       <section id="questions">
-        <h2>Frequently Asked Questions</h2>
-        <p>Here are some of our FAQs. If you have any other questions you’d like
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Here are some of our FAQs. If you have any other questions you’d like
           answered please feel free to email us.</p>
 
         <div class="questions">
@@ -176,7 +173,7 @@
 
           <div class="question-two">
             <div class="question">
-              <p>What about other Chromium browsers?</p>
+              <p class="section-subtitle">What about other Chromium browsers?</p>
               <div class="arrow-icon" id="arrow">
                 <img src="images/icon-arrow.svg" alt=" arrow icon">
               </div>
