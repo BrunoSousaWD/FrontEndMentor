@@ -17,7 +17,7 @@
   <div class="container">
     <header>
       <nav class="navbar">
-        <div class="logo">
+        <div class="logo pd-left">
           <img src="images/logo-bookmark.svg" alt="bookmark logo">
         </div>
 
@@ -29,7 +29,7 @@
         </ul>
       </nav>
 
-      <div class="hero">
+      <div class="hero pd-left">
         <div class="left">
           <h1>A Simple Bookmark Manager</h1>
           <p>A clean and simple interface to organize your favourite websites. Open a new
@@ -46,7 +46,7 @@
 
     <main>
 
-      <section id="features">
+      <section id="features ">
         <h2 class="section-title">Features</h2>
         <p class="section-subtitle"> Our aim is to make it quick and easy for you to access your favourite websites.
           Your bookmarks sync between your devices so you can access them on the go.</p>
@@ -56,10 +56,12 @@
           <p id="searching">Speedy Searching</p>
           <p id="sharing">Easy Sharing</p>
         </div>
-        <div id="bookmark" class="tab">
-
-          <img class="tab-img" src="images/illustration-features-tab-1.svg" alt="">
-
+        <!-- 1st tab-->
+        <div id="bookmark-tab" class="tab">
+          <div id="bookmark" class="tab-left">
+            <img src="images/illustration-features-tab-1.svg" alt="" style="visibility:hidden;">
+            <div class="shape-left"></div>
+          </div>
 
           <div class="tab-right">
             <h2 class="section-title">Bookmark in one click</h2>
@@ -68,9 +70,14 @@
             <button type="button" class="more-info">More Info</button>
           </div>
         </div>
-        <div id="search" class="tab">
 
-          <img src="images/illustration-features-tab-2.svg" alt="">
+        <!-- 2nd tab-->
+        <div id="search-tab" class="tab">
+          <div id="search" class="tab-left">
+            <img src="images/illustration-features-tab-2.svg" alt="" style="visibility:hidden;">
+            <div class="shape-left"></div>
+          </div>
+
           <div class="tab-right">
             <h2 class="section-title">Intelligent search</h2>
             <p class="section-subtitle">Our powerful search feature will help you find saved sites in no time at all.
@@ -78,8 +85,14 @@
             <button type="button" class="more-info">More Info</button>
           </div>
         </div>
-        <div id="share" class="tab">
-          <img src="images/illustration-features-tab-3.svg" alt="">
+
+        <!-- 3rd tab-->
+        <div id="share-tab" class="tab">
+          <div id="share" class="tab-left">
+            <img src="images/illustration-features-tab-3.svg" alt="" style="visibility:hidden;">
+            <div class="shape-left"></div>
+          </div>
+
           <div class="tab-right">
             <h2 class="section-title"> Share your bookmarks</h2>
             <p class="section-subtitle">Easily share your bookmarks and collections with others. Create a shareable
