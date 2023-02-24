@@ -166,12 +166,16 @@ a {
     font-weight: 500;
     background: var(--clr-soft-blue);
     border-radius: 5px;
+    -webkit-box-shadow: 0px 4px 10px 1px rgba(83, 104, 223, 0.26);
+    box-shadow: 0px 4px 10px 1px rgba(83, 104, 223, 0.26);
 }
 
-.hero-btn .chrome-btn:hover {
+.hero-btn .chrome-btn:hover,
+.more-info:hover {
     color: var(--clr-soft-blue);
     background: white;
     border: 2px solid var(--clr-soft-blue);
+
 }
 
 .hero-btn .firefox-btn {
@@ -183,6 +187,8 @@ a {
     font-weight: 500;
     border-radius: 5px;
     margin-left: 1em;
+    -webkit-box-shadow: 0px 4px 10px 1px rgba(83, 104, 223, 0.26);
+    box-shadow: 0px 4px 10px 1px rgba(83, 104, 223, 0.26);
 }
 
 .hero-btn .firefox-btn:hover {
@@ -353,9 +359,11 @@ h1 {
     color: white;
     background-color: var(--clr-soft-blue);
     padding: 10px 20px;
-    border: transparent;
+    border: 2px solid transparent;
     border-radius: 5px;
     margin-bottom: 7em;
+    -webkit-box-shadow: 0px 4px 10px 1px rgba(83, 104, 223, 0.26);
+    box-shadow: 0px 4px 10px 1px rgba(83, 104, 223, 0.26);
     cursor: pointer;
 }
 
@@ -376,7 +384,7 @@ h1 {
 
 
 .card {
-    max-width: 19%;
+    max-width: 21%;
     text-align: center;
     border: transparent;
     border-radius: 15px;
@@ -406,12 +414,14 @@ h1 {
 .card-button {
     color: white;
     background: var(--clr-soft-blue);
-    padding: 12px 30px;
+    padding: 12px 40px;
     font-size: .7rem;
     font-weight: 500;
     border: 2px solid transparent;
     border-radius: 5px;
     margin-top: 1.5em;
+    -webkit-box-shadow: 0px 4px 10px 1px rgba(83, 104, 223, 0.26);
+    box-shadow: 0px 4px 10px 1px rgba(83, 104, 223, 0.26);
     cursor: pointer;
 }
 
@@ -420,8 +430,6 @@ h1 {
     border: 2px solid var(--clr-soft-blue);
     background: white;
 }
-
-/** MISSING BOX SHADOW ON BTN HOVER**/
 
 .card:nth-of-type(1) {
     align-self: flex-start;
@@ -435,6 +443,73 @@ h1 {
 .card:nth-of-type(3) {
     margin-top: 3em;
 }
+
+
+/** Q&A Section **/
+#questions .section-subtitle {
+    margin-bottom: 4em;
+}
+
+.questions {
+    max-width: 42%;
+    margin: 0 auto;
+    color: var(--clr-primary);
+}
+
+#questions .more-info {
+    margin-top: 2.5em;
+    display: block;
+    margin-inline: auto;
+}
+
+.question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 1.5rem;
+    padding-block: 1em;
+    border-top: 1px solid var(--clr-border);
+}
+
+#arrow-up {
+    fill: none;
+    stroke-width: 3;
+    stroke: #5267DF;
+
+}
+
+#arrow-up.close {
+    transform: rotate(180deg);
+    stroke: var(--clr-soft-red);
+}
+
+.question p {
+    font-weight: 500;
+    font-size: 1.25rem;
+}
+
+.answer {
+    color: var(--clr-secondary);
+    margin-top: 1em;
+    margin-bottom: 2em;
+    line-height: 2;
+    font-size: .915rem;
+}
+
+.answer.closed {
+    display: none;
+}
+
+
+#answer-four {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--clr-border);
+}
+
+.bd-b {
+    border-bottom: 1px solid var(--clr-border);
+}
+
 
 /* Attribution */
 .attribution {
