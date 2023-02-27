@@ -57,9 +57,16 @@ question.forEach(quest => {
         if (answer.style.display === 'block') {
             answer.style.display = 'none'
             quest.lastElementChild.classList.remove('close')
+            if (quest.getAttribute('id') === 'question-four') {
+                quest.classList.add('bd-b');
+            }
         } else {
             answer.style.display = 'block'
             quest.lastElementChild.classList.add('close')
+            if (quest.getAttribute('id') === 'question-four') {
+                quest.classList.remove('bd-b');
+            }
         }
+
     })
 });
