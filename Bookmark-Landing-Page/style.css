@@ -53,7 +53,6 @@ body {
     font-family: 'Rubik', sans-serif;
     max-width: 1440px;
     margin: 0 auto;
-    border: 1px solid lime;
     overflow-x: hidden;
 }
 
@@ -97,9 +96,25 @@ a {
 .section-subtitle {
     text-align: center;
     color: var(--clr-secondary);
-    max-width: 50%;
+    max-width: 42%;
     margin: 0 auto;
     line-height: 1.5;
+}
+
+
+.red-btn {
+    color: white;
+    background: var(--clr-soft-red);
+    padding: 10px 30px;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.red-btn:hover {
+    color: var(--clr-soft-red);
+    border: 2px solid var(--clr-soft-red);
+    background: white;
 }
 
 /* Header */
@@ -114,7 +129,7 @@ a {
     display: flex;
     gap: 2.2em;
     text-transform: uppercase;
-    margin-right: 6em;
+    margin-right: 4em;
 }
 
 .navbar ul li a {
@@ -128,18 +143,9 @@ a {
     color: var(--clr-soft-red);
 }
 
-.red-btn {
-    color: white;
-    background: var(--clr-soft-red);
-    padding: 10px 30px;
-    border-radius: 5px;
-    border: 2px solid transparent;
-}
-
-.red-btn:hover {
-    color: var(--clr-soft-red);
-    border: 2px solid var(--clr-soft-red);
-    background: white;
+.navbar ul li a.red-btn {
+    -webkit-box-shadow: 0px 4px 10px 1px rgba(83, 104, 223, 0.26);
+    box-shadow: 0px 4px 10px 1px rgba(83, 104, 223, 0.26);
 }
 
 .hero {
@@ -279,7 +285,6 @@ h1 {
 
 .tab-left {
     position: relative;
-
 }
 
 #bookmark {
@@ -370,6 +375,7 @@ h1 {
 #search-tab,
 #share-tab {
     display: none;
+    transition: 5s all ease;
 }
 
 /** Download section **/
@@ -378,7 +384,7 @@ h1 {
     justify-content: center;
     gap: 1.8em;
     margin-top: 3em;
-    margin-bottom: 5em;
+    margin-bottom: 6em;
 }
 
 
@@ -475,7 +481,7 @@ h1 {
     fill: none;
     stroke-width: 3;
     stroke: #5267DF;
-
+    cursor: pointer;
 }
 
 #arrow-up.close {
@@ -485,7 +491,7 @@ h1 {
 
 .question p {
     font-weight: 500;
-    font-size: 1.25rem;
+
 }
 
 .answer {
@@ -510,6 +516,156 @@ h1 {
     border-bottom: 1px solid var(--clr-border);
 }
 
+/* Call to Action */
+#call-to-action {
+    background: var(--clr-soft-blue);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-block: 4em;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: .65rem;
+    letter-spacing: .5ch;
+    transform: scaleX(1.2);
+}
+
+
+#call-to-action h2 {
+    font-size: 1.65rem;
+    font-weight: 500;
+    max-width: 30%;
+    margin-block: 1.5em;
+}
+
+#call-to-action form {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    width: 33%;
+}
+
+#email {
+    position: relative;
+    border-radius: 5px;
+    width: 65%;
+}
+
+.email-form {
+    display: flex;
+    align-items: center;
+}
+
+.email-form i {
+    position: absolute;
+    z-index: 999;
+    right: 15px;
+}
+
+#error-icon,
+#error {
+    display: none;
+}
+
+
+input[type="email"] {
+    position: inherit;
+    z-index: 1;
+    font-size: 0.85rem;
+    padding: 12px 15px;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    width: 100%;
+    outline: none;
+}
+
+input[type="email"]::placeholder {
+    font-size: .85rem;
+    color: var(--clr-secondary);
+    opacity: .6;
+}
+
+input[type="email"].invalid {
+    border: 2px solid var(--clr-soft-red);
+}
+
+
+#error {
+    position: absolute;
+    z-index: 0;
+    font-size: .6rem;
+    font-style: italic;
+    letter-spacing: 0.1ch;
+    background: var(--clr-soft-red);
+    width: 100%;
+    padding: 7px 0;
+    transform: translateY(-3px);
+    padding-left: 10px;
+    text-align: left;
+    border-radius: 0 0 5px 5px;
+}
+
+form .red-btn {
+    font-size: .85rem;
+}
+
+/* Footer */
+footer {
+    background: var(--clr-primary);
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em 5em;
+    font-size: .85rem;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 4em;
+}
+
+.footer-left ul {
+    display: flex;
+    gap: 3em;
+}
+
+.footer-left ul li {
+    text-transform: uppercase;
+    letter-spacing: 0.2ch;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.741);
+    cursor: pointer;
+}
+
+.footer-left ul li:hover {
+    color: var(--clr-soft-red);
+}
+
+.footer-right {
+    display: flex;
+    gap: 2em;
+    align-items: center;
+}
+
+.footer-right #facebook,
+.footer-right #twitter {
+    cursor: pointer;
+}
+
+.footer-right #facebook:hover path,
+.footer-right #twitter:hover path {
+    fill: var(--clr-soft-red);
+}
 
 /* Attribution */
 .attribution {
