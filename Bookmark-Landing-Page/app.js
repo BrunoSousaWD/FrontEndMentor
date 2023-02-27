@@ -56,8 +56,10 @@ question.forEach(quest => {
         let answer = quest.nextElementSibling;
         if (answer.style.display === 'block') {
             answer.style.display = 'none'
+            quest.lastElementChild.classList.remove('close')
         } else {
             answer.style.display = 'block'
+            quest.lastElementChild.classList.add('close')
         }
     })
 });
