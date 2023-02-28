@@ -54,6 +54,7 @@ body {
     max-width: 1440px;
     margin: 0 auto;
     overflow-x: hidden;
+    border: 2px solid greenyellow;
 }
 
 
@@ -707,5 +708,9 @@ footer .container {
 
     .navbar #mobile-humburger {
         display: block;
+    }
+
+    .hero .left {
+        max-width: 100%;
     }
 }
