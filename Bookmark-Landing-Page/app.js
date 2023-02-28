@@ -45,11 +45,7 @@ sharing.addEventListener('click', () => {
 
 // Questions
 
-
-
-
 const question = document.querySelectorAll('.question');
-
 
 question.forEach(quest => {
     quest.addEventListener('click', () => {
@@ -70,3 +66,6 @@ question.forEach(quest => {
 
     })
 });
+
+
+//  Email-form

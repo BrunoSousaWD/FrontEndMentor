@@ -299,6 +299,7 @@ h1 {
     background-repeat: no-repeat;
     background-position: right;
     margin-bottom: 8em;
+
 }
 
 .shape-left {
@@ -319,8 +320,10 @@ h1 {
     background-repeat: no-repeat;
     background-position: right;
     width: 50%;
-    margin-bottom: 8em;
+    margin-bottom: 4.1em;
 }
+
+
 
 #search .shape-left {
     height: 370px;
@@ -336,14 +339,13 @@ h1 {
     background-repeat: no-repeat;
     background-position: right;
     width: 50%;
-    margin-bottom: 8em;
+    margin-bottom: 6em;
 }
 
 #share .shape-left {
     bottom: -40px;
     border-radius: 0 300px 150px 0;
 }
-
 
 
 .tab-right {
@@ -357,6 +359,17 @@ h1 {
 .tab-right .section-title {
     text-align: left;
 }
+
+
+#bookmark-tab .tab-right .section-title,
+#search-tab .tab-right .section-title {
+    padding-top: 1em;
+}
+
+#share-tab .tab-right .section-title {
+    padding-top: 1em;
+}
+
 
 .tab-right .section-subtitle {
     max-width: 100%;
