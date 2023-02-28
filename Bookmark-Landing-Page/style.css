@@ -692,3 +692,20 @@ footer .container {
 .attribution a {
     color: hsl(228, 45%, 44%);
 }
+
+
+.navbar #mobile-humburger {
+    display: none;
+}
+
+/* mobile */
+
+@media (max-width: 375px) {
+    #desktop-nav {
+        display: none;
+    }
+
+    .navbar #mobile-humburger {
+        display: block;
+    }
+}

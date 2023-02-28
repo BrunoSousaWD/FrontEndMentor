@@ -69,3 +69,18 @@ question.forEach(quest => {
 
 
 //  Email-form
+
+function validateEmail(emailInput) {
+    // event.preventDefault();
+    let mailFormat = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+    if (emailInput.value.match(mailFormat)) {
+        emailInput.value = '';
+        document.getElementById('error').style.display = 'none';
+        document.getElementById('error-icon').style.display = 'none';
+    } else {
+        document.getElementById('error').style.display = 'block';
+        document.getElementById('error-icon').style.display = 'block';
+        return false;
+    }
+
+}

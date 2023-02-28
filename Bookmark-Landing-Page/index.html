@@ -21,12 +21,13 @@
           <img src="images/logo-bookmark.svg" alt="bookmark logo">
         </div>
 
-        <ul>
+        <ul id="desktop-nav">
           <li><a href="#">Features</a></li>
           <li><a href="#">Pricing</a></li>
           <li><a href="#">Contact</a></li>
           <li><a href="#" class="red-btn">Login</a></li>
         </ul>
+        <i id="mobile-humburger"><img src="images/icon-hamburger.svg" alt=""></i>
       </nav>
 
       <div class="hero pd-left">
@@ -206,15 +207,17 @@
     <p class="info">35,000+ already joined</p>
     <h2>Stay up-to-date with what we’re doing</h2>
 
-    <form action="#">
+    <form name="emailForm">
       <div id="email">
         <div class="email-form">
-          <input type="email" placeholder="Enter your email address" maxlength="30">
+          <input type="email" name="emailInput" placeholder="Enter your email address" maxlength="30">
           <i id="error-icon"><img src="images/icon-error.svg" alt="" srcset=""></i>
         </div>
         <p id="error"> Whoops, make sure it's an email</p>
       </div>
-      <button type="submit" class="red-btn">Contact Us</button>
+      <button type="button" class="red-btn" id="validate" value="Submit"
+        onclick="validateEmail(document.emailForm.emailInput)">Contact
+        Us</button>
     </form>
   </section>
   <footer>
