@@ -702,6 +702,16 @@ footer .container {
 /* mobile */
 
 @media (max-width: 375px) {
+    .pd-left {
+        padding-left: 0;
+    }
+
+    .section-subtitle,
+    #call-to-action h2,
+    .questions {
+        max-width: 100%;
+    }
+
     #desktop-nav {
         display: none;
     }
@@ -710,7 +720,22 @@ footer .container {
         display: block;
     }
 
+    .hero,
+    .tabs,
+    .tab {
+        display: block;
+    }
+
     .hero .left {
         max-width: 100%;
+        margin-top: 10em;
+    }
+
+    header {
+        text-align: center;
+    }
+
+    .hero .shape-right {
+        display: none;
     }
 }
