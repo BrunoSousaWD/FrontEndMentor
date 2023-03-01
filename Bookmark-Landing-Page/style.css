@@ -54,7 +54,6 @@ body {
     max-width: 1440px;
     margin: 0 auto;
     overflow-x: hidden;
-    border: 2px solid greenyellow;
 }
 
 
@@ -394,7 +393,6 @@ h1 {
 #search-tab,
 #share-tab {
     display: none;
-    transition: 5s all ease;
 }
 
 /** Download section **/
@@ -537,16 +535,15 @@ h1 {
 #call-to-action {
     background: var(--clr-soft-blue);
     color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     text-align: center;
     padding-block: 4em;
 }
 
+#call-to-action .container {
+    width: 35%;
+}
+
 .info {
-    display: flex;
-    align-items: center;
     text-transform: uppercase;
     font-size: .65rem;
     letter-spacing: .5ch;
@@ -555,17 +552,17 @@ h1 {
 
 
 #call-to-action h2 {
-    font-size: 1.65rem;
+    font-size: 1.75rem;
     font-weight: 500;
-    max-width: 30%;
-    margin-block: 1.5em;
+    margin-block: 1.3em;
 }
 
 #call-to-action form {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 1em;
-    width: 33%;
+    margin: auto;
 }
 
 #email {
@@ -577,6 +574,10 @@ h1 {
 .email-form {
     display: flex;
     align-items: center;
+}
+
+form .red-btn {
+    padding: 12px 30px;
 }
 
 .email-form i {
@@ -702,8 +703,21 @@ footer .container {
 /* mobile */
 
 @media (max-width: 375px) {
+    .container {
+        max-width: 85%;
+    }
+
     .pd-left {
         padding-left: 0;
+    }
+
+    .section-title {
+        font-size: 1.35rem;
+        font-weight: 500;
+    }
+
+    .section-subtitle {
+        font-size: .95rem;
     }
 
     .section-subtitle,
@@ -716,26 +730,94 @@ footer .container {
         display: none;
     }
 
-    .navbar #mobile-humburger {
-        display: block;
-    }
 
     .hero,
     .tabs,
-    .tab {
+    .tab,
+    .navbar #mobile-humburger,
+    .footer-left,
+    .footer-left ul,
+    .cards {
         display: block;
     }
 
     .hero .left {
         max-width: 100%;
-        margin-top: 10em;
     }
 
     header {
         text-align: center;
     }
 
+    .navbar {
+        margin-top: 2em;
+    }
+
+    h1 {
+        font-size: 1.85rem;
+    }
+
+
     .hero .shape-right {
+        width: 310px;
+        height: 205px;
+        right: -19px;
+    }
+
+    .hero img {
+        left: 0;
+    }
+
+    #call-to-action h2 {
+        font-size: 1.3rem;
+        margin-block: 1em;
+    }
+
+
+    .tab-right {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .tab-right .more-info {
         display: none;
     }
+
+    .tab-right .section-title,
+    .tab-right .section-subtitle {
+        text-align: center;
+        padding-right: 0;
+    }
+
+    .card {
+        max-width: 85%;
+        margin: auto;
+    }
+
+    .card:nth-of-type(2),
+    .card:nth-of-type(3) {
+        margin-top: 2em;
+    }
+
+
+    footer .container {
+        display: block;
+        padding: 2em 0;
+        text-align: center;
+    }
+
+    .footer-left img {
+        margin-inline: auto;
+        margin-bottom: 2em;
+
+    }
+
+    .footer-left ul li {
+        margin-bottom: 2em;
+    }
+
+    .footer-right {
+        justify-content: center;
+    }
+
 }

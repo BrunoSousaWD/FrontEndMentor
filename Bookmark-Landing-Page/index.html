@@ -204,20 +204,23 @@
     </main>
   </div>
   <section id="call-to-action">
-    <p class="info">35,000+ already joined</p>
-    <h2>Stay up-to-date with what we’re doing</h2>
+    <div class="container">
+      <p class="info">35,000+ already joined</p>
+      <h2>Stay up-to-date with what <br> we’re doing</h2>
 
-    <form name="emailForm">
-      <div id="email">
-        <div class="email-form">
-          <input type="email" name="emailInput" placeholder="Enter your email address" maxlength="30">
-          <i id="error-icon"><img src="images/icon-error.svg" alt="" srcset=""></i>
+      <form name="emailForm">
+        <div id="email">
+          <div class="email-form">
+            <input type="email" name="emailInput" placeholder="Enter your email address" maxlength="30">
+            <i id="error-icon"><img src="images/icon-error.svg" alt="" srcset=""></i>
+          </div>
+          <p id="error"> Whoops, make sure it's an email</p>
         </div>
-        <p id="error"> Whoops, make sure it's an email</p>
-      </div>
-      <button type="button" class="red-btn" id="validate" value="Submit"
-        onclick="validateEmail(document.emailForm.emailInput)">Contact
-        Us</button>
+        <button type="button" class="red-btn" id="validate" value="Submit"
+          onclick="validateEmail(document.emailForm.emailInput)">Contact
+          Us</button>
+    </div>
+
     </form>
   </section>
   <footer>

@@ -10,18 +10,23 @@ let shareTab = document.getElementById('share-tab');
 bookmarking.addEventListener('click', () => {
     bookmarking.classList.add('active');
     bookmarkTab.style.display = 'flex';
-
+    if (screen.width < 500) {
+        bookmarkTab.style.display = 'block';
+    }
     searching.classList.remove('active');
     searchTab.style.display = 'none';
 
     sharing.classList.remove('active');
     shareTab.style.display = 'none';
+
 });
 
 searching.addEventListener('click', () => {
     searching.classList.add('active');
     searchTab.style.display = 'flex';
-
+    if (screen.width < 500) {
+        searchTab.style.display = 'block';
+    }
     bookmarking.classList.remove('active');
     bookmarkTab.style.display = 'none';
 
@@ -33,7 +38,9 @@ searching.addEventListener('click', () => {
 sharing.addEventListener('click', () => {
     sharing.classList.add('active');
     shareTab.style.display = 'flex';
-
+    if (screen.width < 500) {
+        shareTab.style.display = 'block';
+    }
     searching.classList.remove('active');
     searchTab.style.display = 'none';
 
