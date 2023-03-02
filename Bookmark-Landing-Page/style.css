@@ -731,7 +731,7 @@ footer .container {
     }
 
 
-    .hero,
+
     .tabs,
     .tab,
     .navbar #mobile-humburger,
@@ -741,8 +741,36 @@ footer .container {
         display: block;
     }
 
+    .hero {
+        display: flex;
+        flex-direction: column;
+    }
+
     .hero .left {
         max-width: 100%;
+        order: 2;
+    }
+
+    .hero .right {
+        position: relative;
+    }
+
+
+
+    .hero .left p {
+        font-size: .95rem;
+    }
+
+    .hero-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero-btn .chrome-btn,
+    .hero-btn .firefox-btn {
+        padding: 13px 18px;
+        font-size: .79rem;
     }
 
     header {
@@ -754,7 +782,8 @@ footer .container {
     }
 
     h1 {
-        font-size: 1.85rem;
+        font-size: 1.9rem;
+        font-weight: 500;
     }
 
 
