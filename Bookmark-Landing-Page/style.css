@@ -54,6 +54,7 @@ body {
     max-width: 1440px;
     margin: 0 auto;
     overflow-x: hidden;
+    border: 1px solid yellowgreen;
 }
 
 
@@ -321,16 +322,16 @@ h1 {
     background-position: right;
     width: 50%;
     margin-bottom: 4.1em;
+    margin-left: 2.15em;
 }
 
 
 
 #search .shape-left {
-    height: 370px;
-    width: 615px;
+    height: 340px;
     border-radius: 0 300px 150px 0;
-    right: 105px;
-    bottom: -35px;
+    right: 103px;
+    bottom: -5px;
 }
 
 #share {
@@ -343,7 +344,7 @@ h1 {
 }
 
 #share .shape-left {
-    bottom: -40px;
+    bottom: -41px;
     border-radius: 0 300px 150px 0;
 }
 
@@ -709,6 +710,7 @@ footer .container {
 @media (max-width: 375px) {
     .container {
         max-width: 85%;
+        overflow-x: visible;
     }
 
     .pd-left {
@@ -752,7 +754,7 @@ footer .container {
     }
 
     #mobile-menu .footer-right {
-        margin-top: 11em;
+        margin-top: 1em;
     }
 
     .section-title {
@@ -847,6 +849,13 @@ footer .container {
         margin-block: 1em;
     }
 
+    .tabs {
+        text-align: center;
+    }
+
+    .container .tab .shape-left {
+        width: 100vw;
+    }
 
     .tab-right {
         max-width: 100%;
@@ -868,12 +877,17 @@ footer .container {
     #share {
         width: 100%;
         margin-bottom: 4em;
+        background-position: left;
     }
 
     #bookmark .shape-left {
         height: 210px;
         bottom: -40px;
         right: 8px;
+    }
+
+    #search {
+        margin-left: 0;
     }
 
     #search .shape-left {
