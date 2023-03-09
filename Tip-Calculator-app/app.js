@@ -15,29 +15,71 @@ document.querySelectorAll('input[type="number"]').forEach(input => {
     };
 });
 
+function getPercentage() {
+    let percentAmount;
+    let customAmount;
 
-//grab bill amount * tip percent 
-for (let i = 0; i < tipPercent.length; i++) {
-    tipPercent[i].addEventListener('click', () => {
-        let y = parseInt(tipPercent[i].value) / 100;
-        let k = y * val.value;
-        let p = k / parseInt(numPeople.value);
-        console.log(k);
-        tipAmount.textContent = '$' + k.toFixed(2);
-        totalPerson.textContent = '$' + p.toFixed(2);
+    tipPercent.forEach(button => {
+        button.addEventListener('click', (e) => {
+            // only one item active
+            tipPercent.forEach(btn => btn.classList.remove('active'));
+            e.currentTarget.classList.add('active');
+            // append value to Tip amount div
+            let percent = parseInt(button.value) / 100;
+            percentAmount = percent * val.value;
+
+            // check number of people
+            if (numPeople.value === '') {
+                // add error message
+                document.getElementById('error-message').style.display = 'block';
+                document.querySelector('.num-people').classList.add('error');
+            } else if (numPeople.value === 1) {
+                totalPerson.textContent = '$' + numPeople.value;
+            } else {
+                let tipPerPerson = percentAmount / numPeople.value;
+                let billPerPerson = val.value / numPeople.value;
+                let finalBill = tipPerPerson + billPerPerson;
+
+                tipAmount.textContent = '$' + tipPerPerson.toFixed(2);
+                totalPerson.textContent = '$' + finalBill.toFixed(2);
+                // remove error message
+                document.getElementById('error-message').style.display = 'none';
+                document.querySelector('.num-people').classList.remove('error');
+            }
+        })
+
+    })
+
+    custom.addEventListener('input', () => {
+        if (custom.value === '') {
+            return false;
+        } else {
+            if (numPeople.value === '') {
+                // add error message
+                document.getElementById('error-message').style.display = 'block';
+                document.querySelector('.num-people').classList.add('error');
+            } else if (numPeople.value === 1) {
+                totalPerson.textContent = '$' + numPeople.value;
+            } else {
+                // remove error message
+                document.getElementById('error-message').style.display = 'none';
+                document.querySelector('.num-people').classList.remove('error');
+                let customTip = parseInt(custom.value) / 100;
+                customAmount = customTip * val.value;
+                let customTipPerPerson = customAmount / numPeople.value;
+                let billPerPerson = val.value / numPeople.value;
+                let finalBillCustom = customTipPerPerson + billPerPerson;
+
+                tipAmount.textContent = '$' + customTipPerPerson.toFixed(2);
+                totalPerson.textContent = '$' + finalBillCustom.toFixed(2);
+
+            }
+
+        }
     })
 }
 
-
-// bill amount * custom amount 
-custom.addEventListener('click', () => {
-    let c = parseInt(custom.value) / 100;
-    let u = c * val.value;
-    let p = u / parseInt(numPeople.value);
-    tipAmount.textContent = '$' + u.toFixed(2);
-    totalPerson.textContent = '$' + p.toFixed(2);
-})
-
+val.value = getPercentage();
 
 //reset
 reset.addEventListener('click', () => {
@@ -46,4 +88,9 @@ reset.addEventListener('click', () => {
     val.value = '';
     numPeople.value = '';
     custom.value = '';
+    document.querySelectorAll('.active').forEach(item => {
+        item.classList.remove('active');
+    });
+    document.getElementById('error-message').style.display = 'none';
+    document.querySelector('.num-people').classList.remove('error');
 })
